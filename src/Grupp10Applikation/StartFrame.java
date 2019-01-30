@@ -67,10 +67,14 @@ public class StartFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 <<<<<<< HEAD
+<<<<<<< HEAD
          
 =======
         //oskar123
 >>>>>>> Oskar
+=======
+        //mathias
+>>>>>>> Mathias
         try {
          
             //Specifierar anslutningen till databasen, notera här att databasen är uppkopplad till servern, därav man måste ange den lokala ip-adressen för personen som hostar servern.
