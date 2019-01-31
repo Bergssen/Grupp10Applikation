@@ -153,6 +153,7 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
         huvudFonster huvudfonster = new huvudFonster();
         huvudfonster.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
