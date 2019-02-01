@@ -64,6 +64,34 @@ public class Sql {
         }
         
 }
+/* 
+try {
+         
+            //Specifierar anslutningen till databasen, notera här att databasen är uppkopplad till servern, därav man måste ange den lokala ip-adressen för personen som hostar servern.
+            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
+
+            //Skapar en connection statement som ska användas för att hämta ut saker ur databasen, eller göra ändringar.
+            Statement stmt = conn.createStatement();
+            
+            //Hämtar ut värdet/värden från databasen och lagrar det som ett "ResultSet", notera att man här skriver sin SQL Query i metoden executeQuery().
+            ResultSet rs = stmt.executeQuery("select * from namn");
+            
+            //Loopa igenom ResultSet variabeln för att få fram alla värdena som finns i ResultSet. Notera att loopen loopar igenom rader, för att få ut kolumnerna se nedan. 
+            while (rs.next()) {
+                System.out.println(rs.getString(1) + "  " + rs.getString(2)); //Notera att getString(1) är ID-nummer kolumnen och getString(2) är namn kolumnen.
+                sqlNamn = rs.getString(1) + "  " + rs.getString(2);
+            }
+
+            jTextArea1.setText(sqlNamn);
+
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+    }
+*/
     
     
     
