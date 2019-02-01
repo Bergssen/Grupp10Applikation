@@ -154,12 +154,12 @@ public class LogIn extends javax.swing.JFrame {
         String Losen = jPasswordField1.getText();
         Sql sql = new Sql();
         
-        if(sql.inlogg(Anvandare, Losen))
-        {
-        huvudFonster huvudfonster = new huvudFonster();
+        //if(sql.inlogg(Anvandare, Losen))
+        //{
+        huvudFonster huvudfonster = new huvudFonster(Anvandare);
         huvudfonster.setVisible(true);
         this.setVisible(false);
-        }
+        //}
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
