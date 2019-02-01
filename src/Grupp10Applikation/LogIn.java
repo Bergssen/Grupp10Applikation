@@ -45,10 +45,37 @@ public class LogIn extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
 
+<<<<<<< HEAD
+=======
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(171, 171, 171)
+                .addComponent(jLabel1)
+                .addContainerGap(250, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+>>>>>>> masterTest
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+<<<<<<< HEAD
         jLabel2.setText("Logga In");
+=======
+        jLabel2.setText("Logga in");
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
+>>>>>>> masterTest
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -62,6 +89,7 @@ public class LogIn extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Lösenord");
 
+<<<<<<< HEAD
         txtLoggaInLosenord.setBackground(new java.awt.Color(255, 255, 255));
         txtLoggaInLosenord.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         txtLoggaInLosenord.setForeground(new java.awt.Color(51, 51, 51));
@@ -118,6 +146,17 @@ public class LogIn extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 102, 204));
         jLabel1.setForeground(new java.awt.Color(0, 102, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Chris\\Downloads\\index1234.png")); // NOI18N
+=======
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(102, 102, 102));
+        jButton1.setText("Logga in");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+>>>>>>> masterTest
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,9 +194,24 @@ public class LogIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void btnLoggainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggainActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLoggainActionPerformed
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String Anvandare = jTextField1.getText();
+        String Losen = jPasswordField1.getText();
+        Sql sql = new Sql();
+        
+        if(sql.inlogg(Anvandare, Losen))
+        {
+        huvudFonster huvudfonster = new huvudFonster();
+        huvudfonster.setVisible(true);
+        this.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+>>>>>>> masterTest
 
 
 
