@@ -5,6 +5,7 @@
  */
 package Grupp10Applikation;
 
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -24,11 +25,13 @@ public class StartFrame extends javax.swing.JFrame {
     private String sqlNamn;
     private PreparedStatement pst ;
     private Connection con;
+    private String  filvag ;
+    private Metoder metoder;
     
     public StartFrame() {
         initComponents();
         
-        
+            metoder = new Metoder();
             PreparedStatement pst = null;
             Connection con = null;
             this.pst = pst;
@@ -42,7 +45,7 @@ public class StartFrame extends javax.swing.JFrame {
         
     }
 
-    String filvag ;
+   
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -294,63 +297,55 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
-        
-
-    
-            
-            
-            
+      /*       System.out.println(filename);
         try {
-            //Skapar en connection statement som ska användas för att hämta ut saker ur databasen, eller göra ändringar.
-            String sql = "insert into anvandare values(?,?,?,?,?,?,?,?,?,?,?)" ;
-            pst = con.prepareStatement(sql);
-            
-           
-            pst.setInt(1, Integer.parseInt(id.getText()));
-            pst.setString(2, fornamn.getText());
-            pst.setString(3, efternamn.getText());
-            pst.setString(4, telefon.getText());
-            pst.setString(5, epost.getText());
-            pst.setString(6, losenord.getText());
-            pst.setString(7, anvandarnamn.getText());
-            pst.setBoolean(8, false);
-            pst.setString(9, titel.getText());
-            pst.setBytes(10, foto);
-            pst.setString(11, "hej");
-            
-            pst.execute();
-            pst.close();
+          
+                File image = new File(filename);
+                FileInputStream imageInputStream = new FileInputStream(image);
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                byte[] buf = new byte[1024];
+                for(int readNum; (readNum = imageInputStream.read(buf)) != -1;)
+                {
+                    bos.write(buf, 0 , readNum);
+                }
+                foto = bos.toByteArray();
+                
+                String sql = "update anvandare set profilbild = ? where fornamn = ?" ;
+          
+                pst = con.prepareStatement(sql);
+                pst.setString(2, "Lars");
+                pst.setBytes(1, foto);
+
+                pst.execute();
+                pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-                
-        
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } */
+       metoder.laddaUppBild();
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-         
-        try {                                         
-            
-            
-            String filename;
-            JFileChooser chooser = new JFileChooser();
-            chooser.showOpenDialog(null);
-            File f = chooser.getSelectedFile();
-            b.setIcon(new ImageIcon(f.toString()));
-            filename = f.getAbsolutePath();
-            System.out.println(filename);
+               /*                                  
+                JFileChooser chooser = new JFileChooser();
+                chooser.showOpenDialog(null);
+                File f = chooser.getSelectedFile();
+                b.setIcon(new ImageIcon(f.toString()));
+                filename = f.getAbsolutePath();
                 
-           Metoder.laggUppBild(filename);
+                ImageIcon icon = new ImageIcon(filename);
+                Image img = icon.getImage().getScaledInstance(b.getWidth(), b.getHeight(), Image.SCALE_SMOOTH);
+                ImageIcon image = new ImageIcon(img);
+                */
                 
-            } catch (Exception ex) {
-                System.out.println("StartFrame " + ex);
-            }
-        
-                
-         
+                b.setIcon(metoder.valjBild());
+             
+             
+            // metoder.valjBild(filename);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -407,6 +402,6 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField telefon;
     private javax.swing.JTextField titel;
     // End of variables declaration//GEN-END:variables
-
+String filename = null;
 byte[] foto = null;
 }
