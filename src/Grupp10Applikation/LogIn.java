@@ -1,5 +1,7 @@
 package Grupp10Applikation;
 
+import java.awt.event.KeyEvent;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -67,7 +69,6 @@ public class LogIn extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Log In");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -75,10 +76,14 @@ public class LogIn extends javax.swing.JFrame {
         jLabel3.setText("Användernamn");
         jLabel3.setToolTipText("");
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(51, 51, 51));
         jPasswordField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
@@ -149,18 +154,33 @@ public class LogIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String Anvandare = jTextField1.getText();
+    private void loggain(){
+    
+      String Anvandare = jTextField1.getText();
         String Losen = jPasswordField1.getText();
         Sql sql = new Sql();
         
-        //if(sql.inlogg(Anvandare, Losen))
-        //{
+        if(sql.inlogg(Anvandare, Losen))
+        {
         huvudFonster huvudfonster = new huvudFonster(Anvandare);
+        Sql sql1 = new Sql(Anvandare);
         huvudfonster.setVisible(true);
         this.setVisible(false);
-        //}
+        }
+    
+    
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        loggain();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+           if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+               loggain();
+        
+        }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
 
 
