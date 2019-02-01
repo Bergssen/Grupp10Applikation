@@ -10,11 +10,13 @@ package Grupp10Applikation;
  * @author Chris
  */
 public class Inställningar extends javax.swing.JFrame {
+    private String anvandare;
 
     /**
      * Creates new form Inställningar
      */
-    public Inställningar() {
+    public Inställningar(String anvandare) {
+        this.anvandare = anvandare;
         initComponents();
     }
 
@@ -45,40 +47,37 @@ public class Inställningar extends javax.swing.JFrame {
         txtAndraEpost = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        passNya = new javax.swing.JPasswordField();
+        passNyaRep = new javax.swing.JPasswordField();
+        btnAndraLosen = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnAndraNamn.setBackground(new java.awt.Color(255, 255, 255));
         btnAndraNamn.setForeground(new java.awt.Color(153, 153, 153));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Chris\\Downloads\\index123.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Chris\\Downloads\\photo-camera(3).png")); // NOI18N
 
-        txtAndraNamn.setBackground(new java.awt.Color(255, 255, 255));
         txtAndraNamn.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        txtAndraAlder.setBackground(new java.awt.Color(255, 255, 255));
         txtAndraAlder.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        txtAndraTitel.setBackground(new java.awt.Color(255, 255, 255));
         txtAndraTitel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Namn:");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ålder:");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Epost");
 
         jButton1.setText("Ändra");
@@ -90,69 +89,98 @@ public class Inställningar extends javax.swing.JFrame {
         btnAndraTeleNr.setText("Ändra");
 
         btnAndraEpost.setText("Ändra");
+        btnAndraEpost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraEpostActionPerformed(evt);
+            }
+        });
 
-        txtAndraTeleNr.setBackground(new java.awt.Color(255, 255, 255));
         txtAndraTeleNr.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        txtAndraEpost.setBackground(new java.awt.Color(255, 255, 255));
         txtAndraEpost.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Titel");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("TelefonNummer");
+
+        passNya.setText("jPasswordField1");
+
+        passNyaRep.setText("jPasswordField2");
+
+        btnAndraLosen.setText("Ändra");
+        btnAndraLosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraLosenActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Nya lösenordet");
+
+        jLabel8.setText("Repetera nya lösenordet");
 
         javax.swing.GroupLayout btnAndraNamnLayout = new javax.swing.GroupLayout(btnAndraNamn);
         btnAndraNamn.setLayout(btnAndraNamnLayout);
         btnAndraNamnLayout.setHorizontalGroup(
             btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                            .addGap(145, 145, 145)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(2, 2, 2)
+                            .addComponent(jButton2))
+                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                            .addGap(65, 65, 65)
+                            .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, btnAndraNamnLayout.createSequentialGroup()
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtAndraTeleNr, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btnAndraTeleNr))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, btnAndraNamnLayout.createSequentialGroup()
+                                    .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(61, 61, 61)
+                                    .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                                            .addComponent(txtAndraAlder, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnAndraAlder))
+                                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                                            .addComponent(txtAndraNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jButton1))
+                                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                                            .addComponent(txtAndraTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnAndraTitel))))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAndraNamnLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtAndraEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnAndraEpost)))
                     .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(jButton2))
-                    .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, btnAndraNamnLayout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtAndraTeleNr, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAndraTeleNr))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, btnAndraNamnLayout.createSequentialGroup()
-                                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(61, 61, 61)
-                                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                                        .addComponent(txtAndraAlder, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnAndraAlder))
-                                    .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                                        .addComponent(txtAndraNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton1))
-                                    .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                                        .addComponent(txtAndraTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnAndraTitel))))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAndraNamnLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtAndraEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passNya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
                         .addGap(18, 18, 18)
-                        .addComponent(btnAndraEpost)))
+                        .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                                .addComponent(passNyaRep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAndraLosen)))))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
         btnAndraNamnLayout.setVerticalGroup(
@@ -190,7 +218,16 @@ public class Inställningar extends javax.swing.JFrame {
                     .addComponent(btnAndraEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAndraEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addContainerGap(421, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passNya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passNyaRep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAndraLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,6 +243,26 @@ public class Inställningar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAndraEpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraEpostActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAndraEpostActionPerformed
+
+    private void btnAndraLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraLosenActionPerformed
+        if(Validering.kontrollAttNyaLosenMatchar(passNya, passNyaRep)){
+            
+              String nyalosen = passNya.getText();
+              Sql sql = new Sql(anvandare);
+  
+              sql.andraLosen(nyalosen);
+        
+        
+        
+        
+        }
+        
+        
+    }//GEN-LAST:event_btnAndraLosenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +302,7 @@ public class Inställningar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraAlder;
     private javax.swing.JButton btnAndraEpost;
+    private javax.swing.JButton btnAndraLosen;
     private javax.swing.JPanel btnAndraNamn;
     private javax.swing.JButton btnAndraTeleNr;
     private javax.swing.JButton btnAndraTitel;
@@ -256,6 +314,10 @@ public class Inställningar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPasswordField passNya;
+    private javax.swing.JPasswordField passNyaRep;
     private javax.swing.JTextField txtAndraAlder;
     private javax.swing.JTextField txtAndraEpost;
     private javax.swing.JTextField txtAndraNamn;
