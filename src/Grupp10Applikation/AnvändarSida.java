@@ -12,10 +12,13 @@ package Grupp10Applikation;
  */
 public class AnvändarSida extends javax.swing.JFrame {
 
+    private final String anvandare;
     /**
      * Creates new form AnvändarSida
+     * @param anvandarNamn
      */
-    public AnvändarSida() {
+    public AnvändarSida(String anvandarNamn) {
+        anvandare = anvandarNamn;
         initComponents();
     }
 
@@ -261,7 +264,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AnvändarSida().setVisible(true);
+                
             }
         });
     }
