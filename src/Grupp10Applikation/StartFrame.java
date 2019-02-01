@@ -331,30 +331,25 @@ public class StartFrame extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-         try {                                         
+         
+        try {                                         
             
             
-            
+            String filename;
             JFileChooser chooser = new JFileChooser();
             chooser.showOpenDialog(null);
             File f = chooser.getSelectedFile();
             b.setIcon(new ImageIcon(f.toString()));
             filename = f.getAbsolutePath();
-            
-                // TODO add your handling code here:
-                File image = new File(filename);
-                FileInputStream imageInputStream = new FileInputStream(image);
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                byte[] buf = new byte[1024];
-                for(int readNum; (readNum = imageInputStream.read(buf)) != -1;)
-                {
-                    bos.write(buf, 0 , readNum);
-                }
-                foto = bos.toByteArray();
+            System.out.println(filename);
+                
+           Metoder.laggUppBild(filename);
                 
             } catch (Exception ex) {
-                
+                System.out.println("StartFrame " + ex);
             }
+        
+                
          
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -412,6 +407,6 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField telefon;
     private javax.swing.JTextField titel;
     // End of variables declaration//GEN-END:variables
-String filename = null;
+
 byte[] foto = null;
 }
