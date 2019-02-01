@@ -30,6 +30,7 @@ public class Sql {
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
         
       public boolean inlogg(String Anvandare, String Losen){
