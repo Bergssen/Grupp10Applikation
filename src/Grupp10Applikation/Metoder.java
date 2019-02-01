@@ -51,18 +51,16 @@ public class Metoder {
     
     public ImageIcon valjBild ()
     {
-                
                 JFileChooser chooser = new JFileChooser();
                 chooser.showOpenDialog(null);
                 File f = chooser.getSelectedFile();
-               // b.setIcon(new ImageIcon(f.toString()));
+               
                 filename = f.getAbsolutePath();
                 
                 ImageIcon icon = new ImageIcon(filename);
-                Image img = icon.getImage().getScaledInstance(208, 212, Image.SCALE_SMOOTH);
+                // Skriv in ScaledInstance som labeln är för att det ska visas rätt.
+                Image img = icon.getImage().getScaledInstance(154, 144, Image.SCALE_SMOOTH);
                 ImageIcon image = new ImageIcon(img);
-              //  Image img = icon.getImage().getScaledInstance(b.getWidth(), b.getHeight(), Image.SCALE_SMOOTH);
-              //  b.setIcon(image);
                 return image;
         
     }    
@@ -71,7 +69,7 @@ public class Metoder {
     {
     
          try {
-                File image = new File(filename);
+                File image = new File(filename); // filename ligger i fältet och instansieras i metoden valjBild.
                 FileInputStream imageInputStream = new FileInputStream(image);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 byte[] buf = new byte[1024];
@@ -81,10 +79,10 @@ public class Metoder {
                 }
                 foto = bos.toByteArray();
                 
-                String sql = "update anvandare set profilbild = ? where fornamn = ?" ;
+                String sql = "update anvandare set profilbild = ? where fornamn = ?";
           
                 pst = con.prepareStatement(sql);
-                pst.setString(2, "Lars");
+                pst.setString(2, "Lars");  
                 pst.setBytes(1, foto);
 
                 pst.execute();
@@ -98,5 +96,7 @@ public class Metoder {
         }
     
     }
+    
+   
     
 }

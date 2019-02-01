@@ -297,55 +297,12 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      /*       System.out.println(filename);
-        try {
-          
-                File image = new File(filename);
-                FileInputStream imageInputStream = new FileInputStream(image);
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                byte[] buf = new byte[1024];
-                for(int readNum; (readNum = imageInputStream.read(buf)) != -1;)
-                {
-                    bos.write(buf, 0 , readNum);
-                }
-                foto = bos.toByteArray();
-                
-                String sql = "update anvandare set profilbild = ? where fornamn = ?" ;
-          
-                pst = con.prepareStatement(sql);
-                pst.setString(2, "Lars");
-                pst.setBytes(1, foto);
-
-                pst.execute();
-                pst.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } */
-       metoder.laddaUppBild();
-      
+       metoder.laddaUppBild(); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-               /*                                  
-                JFileChooser chooser = new JFileChooser();
-                chooser.showOpenDialog(null);
-                File f = chooser.getSelectedFile();
-                b.setIcon(new ImageIcon(f.toString()));
-                filename = f.getAbsolutePath();
-                
-                ImageIcon icon = new ImageIcon(filename);
-                Image img = icon.getImage().getScaledInstance(b.getWidth(), b.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon image = new ImageIcon(img);
-                */
-                
-                b.setIcon(metoder.valjBild());
-             
-             
-            // metoder.valjBild(filename);
+  
+        b.setIcon(metoder.valjBild()); // b = labelVariabeln
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
