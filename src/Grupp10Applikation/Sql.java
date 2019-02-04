@@ -154,6 +154,7 @@ public class Sql {
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
+<<<<<<< HEAD
         
     }
     
@@ -180,6 +181,32 @@ public class Sql {
 }
 
    
+=======
+            
+      }
+      public String fyllText(String anvandare, String kolumn)
+      {
+          String resultat = "";
+          
+          try
+          {
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery("select "+kolumn+" from anvandare where Anvandarnamn = '"+anvandare+"'");
+           if(rs.next())
+           {
+           resultat = rs.getString(1);
+           }
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+          
+          
+          return resultat;
+      }
+          }
+      
+>>>>>>> origin/Adam
 
 /* 
 try {
