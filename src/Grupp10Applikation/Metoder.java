@@ -49,7 +49,7 @@ public class Metoder {
         }
     }
     
-    public ImageIcon valjBild ()
+    public ImageIcon valjProfilBild ()
     {
                 JFileChooser chooser = new JFileChooser();
                 chooser.showOpenDialog(null);
@@ -65,7 +65,7 @@ public class Metoder {
         
     }    
     
-    public void laddaUppBild()
+    public void laddaUppBildDatabas(String anvandarNamn)
     {
     
          try {
@@ -82,7 +82,7 @@ public class Metoder {
                 String sql = "update anvandare set profilbild = ? where fornamn = ?";
           
                 pst = con.prepareStatement(sql);
-                pst.setString(2, "Lars");  
+                pst.setString(2, anvandarNamn);  
                 pst.setBytes(1, foto);
 
                 pst.execute();
