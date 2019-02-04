@@ -282,7 +282,7 @@ public class huvudFonster extends javax.swing.JFrame {
        nysida.andraSynlighetknapp();
        
          Sql anslutning = new Sql();
-        String namn = jLabel3.getText();
+       
        
                 
         anslutning.getResultGuestVarde(jLabel3);
