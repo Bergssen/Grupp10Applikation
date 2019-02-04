@@ -64,10 +64,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSPValtDatum" min="-2" pref="501" max="-2" attributes="0"/>
-                                  <Component id="jCalendar1" min="-2" pref="501" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jSPValtDatum" min="-2" pref="501" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
@@ -83,6 +80,10 @@
                                       <Component id="lblProfilbild" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="jCalendar1" min="-2" pref="299" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="56" max="32767" attributes="0"/>
@@ -139,9 +140,9 @@
                                   <Component id="btnVisaMedelande" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="btnTaBortMedelande" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                              <Component id="jCalendar1" min="-2" pref="383" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                              <Component id="jCalendar1" min="-2" pref="206" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                               <Component id="jSPValtDatum" min="-2" pref="216" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
@@ -169,6 +170,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Visa din profil"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVisaProfilActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnVisaAktivitetsflode">
       <Properties>
@@ -236,13 +240,6 @@
         <Property name="text" type="java.lang.String" value="Du &#xe4;r inloggad som: namn"/>
       </Properties>
     </Component>
-    <Component class="com.toedter.calendar.JCalendar" name="jCalendar1">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-        </Property>
-      </Properties>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jSPValtDatum">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -263,6 +260,8 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Skapa nytt inl&#xe4;gg"/>
       </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JCalendar" name="jCalendar1">
     </Component>
   </SubComponents>
 </Form>
