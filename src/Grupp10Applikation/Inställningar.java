@@ -10,13 +10,14 @@ package Grupp10Applikation;
  * @author Chris
  */
 public class Inställningar extends javax.swing.JFrame {
-    private String anvandare;
-
+    private final String anvandare;
+    private Sql sql;
     /**
      * Creates new form Inställningar
      */
     public Inställningar(String anvandare) {
         this.anvandare = anvandare;
+        sql = new Sql();
         initComponents();
     }
 
@@ -33,7 +34,7 @@ public class Inställningar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         txtAndraNamn = new javax.swing.JTextField();
-        txtAndraAlder = new javax.swing.JTextField();
+        txtAndraEfternamn = new javax.swing.JTextField();
         txtAndraTitel = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -64,7 +65,7 @@ public class Inställningar extends javax.swing.JFrame {
 
         txtAndraNamn.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        txtAndraAlder.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtAndraEfternamn.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         txtAndraTitel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
@@ -74,7 +75,7 @@ public class Inställningar extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel3.setText("Ålder:");
+        jLabel3.setText("Efternamn");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -146,12 +147,12 @@ public class Inställningar extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, btnAndraNamnLayout.createSequentialGroup()
                                     .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(61, 61, 61)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3))
+                                    .addGap(46, 46, 46)
                                     .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                                            .addComponent(txtAndraAlder, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtAndraEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
                                             .addComponent(btnAndraAlder))
                                         .addGroup(btnAndraNamnLayout.createSequentialGroup()
@@ -200,7 +201,7 @@ public class Inställningar extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAndraAlder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAndraEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(btnAndraAlder, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -243,7 +244,15 @@ public class Inställningar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+public void textInstallningar()
+    {
+       
+       txtAndraNamn.setText(sql.fyllText(anvandare,"Fornamn"));
+       txtAndraEfternamn.setText(sql.fyllText(anvandare,"Efternamn"));
+       txtAndraTitel.setText(sql.fyllText(anvandare,"Titel"));
+       txtAndraTeleNr.setText(sql.fyllText(anvandare,"Epost"));
+       txtAndraEpost.setText(sql.fyllText(anvandare,"Telnr"));
+    }
     private void btnAndraEpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraEpostActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAndraEpostActionPerformed
@@ -318,7 +327,7 @@ public class Inställningar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField passNya;
     private javax.swing.JPasswordField passNyaRep;
-    private javax.swing.JTextField txtAndraAlder;
+    private javax.swing.JTextField txtAndraEfternamn;
     private javax.swing.JTextField txtAndraEpost;
     private javax.swing.JTextField txtAndraNamn;
     private javax.swing.JTextField txtAndraTeleNr;
