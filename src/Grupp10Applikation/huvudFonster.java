@@ -11,10 +11,13 @@ package Grupp10Applikation;
  */
 public class huvudFonster extends javax.swing.JFrame {
 
+    private final String anvandare;
     /**
      * Creates new form huvudFonster
+     * @param anvandarNamn
      */
-    public huvudFonster() {
+    public huvudFonster(String anvandarNamn) {
+        anvandare = anvandarNamn;
         initComponents();
     }
 
@@ -44,10 +47,10 @@ public class huvudFonster extends javax.swing.JFrame {
         txtFlode = new javax.swing.JFormattedTextField();
         lblProfilbild = new javax.swing.JLabel();
         lblInloggadSom = new javax.swing.JLabel();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         jSPValtDatum = new javax.swing.JScrollPane();
         jTAValtDatum = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -61,6 +64,11 @@ public class huvudFonster extends javax.swing.JFrame {
         lblValkomst.setText("Välkommen! Just nu visas startflödet");
 
         btnVisaProfil.setText("Visa din profil");
+        btnVisaProfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisaProfilActionPerformed(evt);
+            }
+        });
 
         btnVisaAktivitetsflode.setText("Visa aktivitetsflöde");
 
@@ -90,8 +98,6 @@ public class huvudFonster extends javax.swing.JFrame {
         lblProfilbild.setText(" Här visas profilbilden");
 
         lblInloggadSom.setText("Du är inloggad som: namn");
-
-        jCalendar1.setBackground(new java.awt.Color(204, 204, 204));
 
         jTAValtDatum.setColumns(20);
         jTAValtDatum.setRows(5);
@@ -127,9 +133,7 @@ public class huvudFonster extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSPValtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jSPValtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(89, 89, 89)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -140,7 +144,10 @@ public class huvudFonster extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblInloggadSom)
                                         .addGap(107, 107, 107)
-                                        .addComponent(lblProfilbild)))))
+                                        .addComponent(lblProfilbild))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(56, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(493, 493, 493)
@@ -185,9 +192,9 @@ public class huvudFonster extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnVisaMedelande, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnTaBortMedelande, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(99, 99, 99)
-                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(107, 107, 107)
+                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(175, 175, 175)
                                 .addComponent(jSPValtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(104, 104, 104))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -202,10 +209,19 @@ public class huvudFonster extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFlodeActionPerformed
 
+    private void btnVisaProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaProfilActionPerformed
+        AnvändarSida nySida = new AnvändarSida(anvandare);
+        nySida.textAnvandare();
+        nySida.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_btnVisaProfilActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -218,21 +234,16 @@ public class huvudFonster extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(huvudFonster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(huvudFonster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(huvudFonster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(huvudFonster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new huvudFonster().setVisible(true);
             }
         });
     }

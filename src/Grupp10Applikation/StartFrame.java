@@ -5,6 +5,7 @@
  */
 package Grupp10Applikation;
 
+<<<<<<< HEAD
 import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -43,6 +44,16 @@ public class StartFrame extends javax.swing.JFrame {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+=======
+
+public class StartFrame extends javax.swing.JFrame {
+
+   
+
+    public StartFrame() {
+        initComponents();
+        
+>>>>>>> masterTest
     }
 
    
@@ -59,6 +70,7 @@ public class StartFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+<<<<<<< HEAD
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         b = new javax.swing.JLabel();
@@ -73,6 +85,8 @@ public class StartFrame extends javax.swing.JFrame {
         titel = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+=======
+>>>>>>> masterTest
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +101,7 @@ public class StartFrame extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+<<<<<<< HEAD
         jButton2.setText("test");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,11 +150,14 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
+=======
+>>>>>>> masterTest
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(68, 68, 68)
                 .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -178,10 +196,18 @@ public class StartFrame extends javax.swing.JFrame {
                                     .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(losenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(87, 87, 87))
+=======
+                .addGap(228, 228, 228)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
+>>>>>>> masterTest
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
@@ -224,6 +250,13 @@ public class StartFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(titel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(184, Short.MAX_VALUE))
+=======
+                .addGap(109, 109, 109)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(156, 156, 156))
+>>>>>>> masterTest
         );
 
         pack();
@@ -231,38 +264,12 @@ public class StartFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        //oskar123
-
-        //mathias
-
-        try {
-         
-            //Specifierar anslutningen till databasen, notera här att databasen är uppkopplad till servern, därav man måste ange den lokala ip-adressen för personen som hostar servern.
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
-
-            //Skapar en connection statement som ska användas för att hämta ut saker ur databasen, eller göra ändringar.
-            Statement stmt = conn.createStatement();
-            
-            //Hämtar ut värdet/värden från databasen och lagrar det som ett "ResultSet", notera att man här skriver sin SQL Query i metoden executeQuery().
-            ResultSet rs = stmt.executeQuery("select * from namn");
-            
-            //Loopa igenom ResultSet variabeln för att få fram alla värdena som finns i ResultSet. Notera att loopen loopar igenom rader, för att få ut kolumnerna se nedan. 
-            while (rs.next()) {
-                System.out.println(rs.getString(1) + "  " + rs.getString(2)); //Notera att getString(1) är ID-nummer kolumnen och getString(2) är namn kolumnen.
-                sqlNamn = rs.getString(1) + "  " + rs.getString(2);
-
-            }
-
-            jTextArea1.setText(sqlNamn);
-
-            
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+<<<<<<< HEAD
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         huvudFonster nySida = new huvudFonster();
@@ -305,6 +312,8 @@ public class StartFrame extends javax.swing.JFrame {
         b.setIcon(metoder.valjBild()); // b = labelVariabeln
     }//GEN-LAST:event_jButton5ActionPerformed
 
+=======
+>>>>>>> masterTest
     /**
      * @param args the command line arguments
      */
@@ -314,6 +323,8 @@ public class StartFrame extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        LogIn login = new LogIn();
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -335,7 +346,9 @@ public class StartFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartFrame().setVisible(true);
+            
+                login.setVisible(true);
+                
             }
         });
     }
@@ -349,10 +362,13 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField fornamn;
     private javax.swing.JTextField id;
     private javax.swing.JButton jButton1;
+<<<<<<< HEAD
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+=======
+>>>>>>> masterTest
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField losenord;
