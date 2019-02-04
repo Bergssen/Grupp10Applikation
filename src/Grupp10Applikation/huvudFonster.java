@@ -5,6 +5,7 @@
  */
 package Grupp10Applikation;
 
+import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
@@ -15,6 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -282,7 +284,6 @@ public class huvudFonster extends javax.swing.JFrame {
        nysida.andraSynlighetknapp();
        
          Sql anslutning = new Sql();
-        String namn = jLabel3.getText();
        
                 
         anslutning.getResultGuestVarde(jLabel3);
@@ -299,7 +300,9 @@ public class huvudFonster extends javax.swing.JFrame {
     }  
 }); 
 
-    } 
+    }
+    
+    
     
     /**
      * @param args the command line arguments

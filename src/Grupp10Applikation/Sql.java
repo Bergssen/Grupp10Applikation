@@ -30,6 +30,7 @@ public class Sql {
     private String guestTitel ="";
     private String guestEpost ="";
     private String guestTelnr ="";
+    private int anvandarID = 0;
 
     public Sql() {
 
@@ -98,7 +99,7 @@ public class Sql {
     public int hamtaAnvandarID(JLabel varde) {
 
         String anvandarenamnGuest = varde.getText();
-        int anvandarID = 0;
+        
 
         try {
             String sql = "select AnvandareID from anvandare where Anvandarnamn = " + "'" + anvandarenamnGuest + "'";
@@ -133,18 +134,18 @@ public class Sql {
         String anvandarIDString = Integer.toString(anvandareID);
         
         try {
-            String sql = "select fornamn, efternamn, telnr, Epost, Titel from anvandare where AnvandarID = " + anvandarIDString;
+            String sql = "select fornamn, efternamn, telnr, Epost, Titel from anvandare where AnvandareID = " + anvandarIDString;
             PreparedStatement pst = conn.prepareStatement(sql);
 
             ResultSet rs = pst.executeQuery(sql);
 
             while (rs.next()) {
 
-                guestFornamn = rs.getString(2);
-                guestEfternamn = rs.getString(3);
-                guestTelnr = rs.getString(4);
-                guestEpost = rs.getString(5);
-                guestTitel = rs.getString(9);
+                guestFornamn = rs.getString(1);
+                guestEfternamn = rs.getString(2);
+                guestTelnr = rs.getString(3);
+                guestEpost = rs.getString(4);
+                guestTitel = rs.getString(5);
                 
 
             }
@@ -154,7 +155,7 @@ public class Sql {
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-<<<<<<< HEAD
+
         
     }
     
@@ -178,12 +179,12 @@ public class Sql {
             public String getGuestEpost(){
             return guestEpost;
         }
-}
+
 
    
-=======
+
             
-      }
+      
       public String fyllText(String anvandare, String kolumn)
       {
           String resultat = "";
@@ -204,9 +205,9 @@ public class Sql {
           
           return resultat;
       }
-          }
-      
->>>>>>> origin/Adam
+          
+} 
+
 
 /* 
 try {
