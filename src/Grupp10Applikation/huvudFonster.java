@@ -12,6 +12,7 @@ package Grupp10Applikation;
 public class huvudFonster extends javax.swing.JFrame {
 
     private final String anvandare;
+    private int admin = 0;
     /**
      * Creates new form huvudFonster
      * @param anvandarNamn
@@ -19,6 +20,14 @@ public class huvudFonster extends javax.swing.JFrame {
     public huvudFonster(String anvandarNamn) {
         anvandare = anvandarNamn;
         initComponents();
+        lblValkomst.setText("Välkommen! Du är inloggad som användare.");
+    }
+    
+    public huvudFonster(String anvandarNamn, int admin) {
+        anvandare = anvandarNamn;
+        this.admin = admin;
+        initComponents();
+        lblValkomst.setText("Välkommen! Du är inloggad som Admin");
     }
 
     /**

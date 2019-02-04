@@ -208,7 +208,7 @@ public class Sql {
           return resultat;
       }
       
-          }
+          
 
       
       public static String adminTrueFalse(String anvandare){
@@ -231,7 +231,7 @@ public class Sql {
       }
       
       
-          }
+}
 
         
          
