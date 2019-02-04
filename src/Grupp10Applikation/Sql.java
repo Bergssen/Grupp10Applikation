@@ -155,7 +155,7 @@ public class Sql {
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-<<<<<<< HEAD
+
       }
       public void andraFornamn(String fornamn){
           
@@ -221,10 +221,10 @@ public class Sql {
         }
      }
       
-=======
+
 
         
-    }
+    
     
     
         public String getGuestFornamn(){
@@ -250,7 +250,7 @@ public class Sql {
 
    
 
->>>>>>> Merre
+
             
       
       public String fyllText(String anvandare, String kolumn)
