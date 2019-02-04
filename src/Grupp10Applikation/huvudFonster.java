@@ -35,7 +35,7 @@ public class huvudFonster extends javax.swing.JFrame {
     
     public huvudFonster(String anvandarNamn) {
         anvandare = anvandarNamn;
-        nysida = new AnvändarSida("Lars");
+        
         initComponents();
         klickaAnvandarenamn();
         
@@ -277,7 +277,7 @@ public class huvudFonster extends javax.swing.JFrame {
     public void mouseClicked(MouseEvent e)  
     {  
       
-       nysida  = new AnvändarSida(jLabel3.getText());
+       nysida  = new AnvändarSida(anvandare,jLabel3.getText());
        nysida.setVisible(true);
        
        nysida.andraSynlighettext();
