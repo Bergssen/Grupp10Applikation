@@ -1,5 +1,13 @@
 package Grupp10Applikation;
 
+import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,6 +30,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         sql = new Sql();
         initComponents();
+        visaProfilbild();
     }
 
     /**
@@ -248,6 +257,38 @@ public class AnvändarSida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void visaProfilbild()
+    {
+    
+         try{
+           byte[] imageBytes;
+           Image image;
+           Class.forName("com.mysql.jdbc.Driver");
+           Connection con=DriverManager.getConnection("jdbc:mysql://10.22.25.76/namn", "Nikola", "password1234");
+           PreparedStatement ps=con.prepareStatement("select Profilbild from anvandare where Anvandarnamn ='"+anvandare+"'");
+          
+           ResultSet rs = ps.executeQuery();
+           while(rs.next()){
+           
+               imageBytes=rs.getBytes(1);
+               image=getToolkit().createImage(imageBytes);
+               ImageIcon icon = new ImageIcon(image);
+               
+                Image img = icon.getImage().getScaledInstance(302, 270, Image.SCALE_SMOOTH);
+                ImageIcon bild = new ImageIcon(img);
+               
+               jLabel1.setIcon(bild);
+               
+           }
+       
+       
+
+       }catch(ClassNotFoundException | SQLException e){
+           System.out.println(e);
+        
+    }
+    }     
+    
     public void textAnvandare()
     {
        
