@@ -177,8 +177,25 @@ public class LogIn extends javax.swing.JFrame {
     
     }
     
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        loggain();
+        
+        Metoder metod = new Metoder();
+        
+       String admin =  metod.adminTrueOrFalse(jTextField1.getText());
+       
+       System.out.println(admin);
+       
+        if(admin.equals("True")){
+        
+        }
+        
+        else {
+        
+        }
+            loggain();
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed

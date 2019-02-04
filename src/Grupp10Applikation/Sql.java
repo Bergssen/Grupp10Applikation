@@ -80,7 +80,7 @@ public class Sql {
         try {
            String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
            PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
+          pst.executeUpdate();
           JOptionPane.showMessageDialog(null, "Ditt lösenord är ändrat");
             
         } catch (SQLException ex) {
@@ -108,8 +108,32 @@ public class Sql {
           
           return resultat;
       }
-          }
       
+      public static String adminTrueFalse(String anvandare){
+        String svar = "";
+        
+          try {
+            
+            String SqlFraga = "select anvandare.Admin from anvandare where anvandare.Anvandarnamn = '"+ anvandare + "'";
+         
+           PreparedStatement pst = conn.prepareStatement(SqlFraga);
+         ResultSet rssvar = pst.executeQuery();
+          
+           svar = rssvar.toString();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+        return svar;
+      }
+      
+      
+          }
+
+        
+         
+
 
 /* 
 try {
