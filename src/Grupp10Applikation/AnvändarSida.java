@@ -27,6 +27,8 @@ public class AnvändarSida extends javax.swing.JFrame {
         initComponents();
     }
     
+  
+
     public void setInstallningar(JLabel svar){
         svar.setVisible(false);
     }
@@ -138,6 +140,7 @@ public class AnvändarSida extends javax.swing.JFrame {
 
         jLabel9.setBackground(new java.awt.Color(51, 51, 51));
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Telefonnummer");
 
         txtVisaTelNr.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -298,7 +301,11 @@ public class AnvändarSida extends javax.swing.JFrame {
 
     public void setGuestVarde(String fornamn, String efternamn, String epost, String telnr, String titel){
         
-       
+       txtVisaForNamn.setText(fornamn);
+       txtVisaEfterNamn.setText(efternamn);
+       txtVisaTitel.setText(titel);
+       txtVisaEpost.setText(epost);
+       txtVisaTelNr.setText(telnr);
         
     }
     

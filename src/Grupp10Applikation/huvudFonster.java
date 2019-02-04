@@ -239,8 +239,19 @@ public class huvudFonster extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFlodeActionPerformed
     public void informationDisplay(){
         Sql anslutning = new Sql();
-        
+        String namn = jLabel3.getText();
+        AnvändarSida nysida = new AnvändarSida(namn); 
+                
         anslutning.getResultGuestVarde(jLabel3);
+        String fornamn = anslutning.getGuestFornamn();
+        String efternamn = anslutning.getGuestEfternamn();
+        String titel = anslutning.getGuestTitel();
+        String epost = anslutning.getGuestEpost();
+        String telnr = anslutning.getGuestTelnr();
+       
+        
+        
+        nysida.setGuestVarde(fornamn, efternamn, epost, telnr, titel);
         
         
         
@@ -264,14 +275,26 @@ public class huvudFonster extends javax.swing.JFrame {
     public void mouseClicked(MouseEvent e)  
     {  
       
-       nysida  = new AnvändarSida("Lars");
+       nysida  = new AnvändarSida(jLabel3.getText());
        nysida.setVisible(true);
        
        nysida.andraSynlighettext();
        nysida.andraSynlighetknapp();
        
-       informationDisplay();
-       //nysida.setInstallningar2(btnInstallning);
+         Sql anslutning = new Sql();
+        String namn = jLabel3.getText();
+       
+                
+        anslutning.getResultGuestVarde(jLabel3);
+        String fornamn = anslutning.getGuestFornamn();
+        String efternamn = anslutning.getGuestEfternamn();
+        String titel = anslutning.getGuestTitel();
+        String epost = anslutning.getGuestEpost();
+        String telnr = anslutning.getGuestTelnr();
+       
+        
+        
+        nysida.setGuestVarde(fornamn, efternamn, epost, telnr, titel);
        
     }  
 }); 
