@@ -1,5 +1,8 @@
 package Grupp10Applikation;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -23,6 +26,36 @@ public class AnvändarSida extends javax.swing.JFrame {
         sql = new Sql();
         initComponents();
     }
+    
+  
+
+    public void setInstallningar(JLabel svar){
+        svar.setVisible(false);
+    }
+    
+    public void andraSynlighettext(){
+        jLabel2.setVisible(false);
+    }
+    
+    public void andraSynlighetknapp(){
+        btnInstallning.setVisible(false);
+    }
+    
+    public void setInstallningar2(JButton svar){
+        svar.setVisible(false);
+    }
+    
+    public void setGuestInfo(String fornamn1, String efternamn1, String titel1, String epost1, String telefonnr1){
+        
+        String fornamn = fornamn1;
+        String efternamn = efternamn1;
+        String titel = titel1;
+        String epost = epost1;
+        String telefonnr= telefonnr1;
+        
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,6 +140,7 @@ public class AnvändarSida extends javax.swing.JFrame {
 
         jLabel9.setBackground(new java.awt.Color(51, 51, 51));
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Telefonnummer");
 
         txtVisaTelNr.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -265,9 +299,16 @@ public class AnvändarSida extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnInstallningActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    public void setGuestVarde(String fornamn, String efternamn, String epost, String telnr, String titel){
+        
+       txtVisaForNamn.setText(fornamn);
+       txtVisaEfterNamn.setText(efternamn);
+       txtVisaTitel.setText(titel);
+       txtVisaEpost.setText(epost);
+       txtVisaTelNr.setText(telnr);
+        
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
