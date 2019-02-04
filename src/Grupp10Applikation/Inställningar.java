@@ -203,7 +203,7 @@ public class Inställningar extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
                         .addComponent(jButton2)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         btnAndraNamnLayout.setVerticalGroup(
             btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +256,7 @@ public class Inställningar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAndraNamn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAndraNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

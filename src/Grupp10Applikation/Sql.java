@@ -173,6 +173,41 @@ public class Sql {
           
           return resultat;
       }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+       public String kollaAdmin(String anvandare)
+      {
+          String resultat = "";
+          
+          try
+          {
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery("select admin from anvandare where Anvandarnamn = '"+anvandare+"'");
+           if(rs.next())
+           {
+           resultat = rs.getString(1);
+           }
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+          
+        System.out.println(resultat);  
+          return resultat;
+      }
+      
           }
       
 

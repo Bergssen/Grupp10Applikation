@@ -172,11 +172,27 @@ public class LogIn extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
+        
+        
+        kollaAdmin();
+        
         loggain();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void kollaAdmin(){
+    
+         Sql sql = new Sql();
+       
+       String inlogg = jTextField1.getText();
+       
+       sql.kollaAdmin(inlogg);
+        
+    
+    }
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
            if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+               kollaAdmin();
                loggain();
         
         }
