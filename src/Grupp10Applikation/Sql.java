@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,82 +22,165 @@ import javax.swing.JOptionPane;
  */
 public class Sql {
     
-    private static Connection conn; 
+    
+    private static Connection conn;
     private String anvandare;
-    
-    public Sql () {
-    
- 
+    private String guestFornamn ="";
+    private String guestEfternamn ="";
+    private String guestTitel ="";
+    private String guestEpost ="";
+    private String guestTelnr ="";
+
+    public Sql() {
+
         try {
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
             conn = conn1;
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-        }
-     public Sql(String anvandarnamn){
-        
+    }
+
+    public Sql(String anvandarnamn) {
+
         this.anvandare = anvandarnamn;
-         try {
+        try {
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
             conn = conn1;
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        }
-        
-      public boolean inlogg(String Anvandare, String Losen){
+
+    }
+
+    public boolean inlogg(String Anvandare, String Losen) {
         String sqlAnvandare = "";
         String sqlLosen = "";       // Inloggningsfunktionen
         boolean hittad = false;
-        
+
         try {
             Statement stmt = conn.createStatement();
-            
+
             ResultSet rs = stmt.executeQuery("select * from anvandare");
-            
-            while (rs.next()){
-            
-            sqlAnvandare = rs.getString(7);
-            sqlLosen = rs.getString(6);
-            if(sqlAnvandare.equals(Anvandare) && sqlLosen.equals(Losen)){
-            hittad = true;
+
+            while (rs.next()) {
+
+                sqlAnvandare = rs.getString(7);
+                sqlLosen = rs.getString(6);
+                if (sqlAnvandare.equals(Anvandare) && sqlLosen.equals(Losen)) {
+                    hittad = true;
+                }
             }
-            }          
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-          
+
         return hittad;
-        
-        }
-       
-      public void andraLosen(String losen){
-      
-      String nyalosen = losen;
-      
-          
+
+    }
+    
+    
+
+    public void andraLosen(String losen) {
+
+        String nyalosen = losen;
+
         try {
-           String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
-          JOptionPane.showMessageDialog(null, "Ditt lösenord är ändrat");
-            
+            String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-      
+
+    }
+
+    public int hamtaAnvandarID(JLabel varde) {
+
+        String anvandarenamnGuest = varde.getText();
+        int anvandarID = 0;
+
+        try {
+            String sql = "select AnvandareID from anvandare where Anvandarnamn = " + "'" + anvandarenamnGuest + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            ResultSet rs = pst.executeQuery(sql);
+
+            while (rs.next()) {
+
+                anvandarID = rs.getInt(1);
+
+            }
+
+            System.out.println(anvandarID);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return anvandarID;
+    }
+    
+    
+    public void getResultGuestVarde(JLabel varde){
+        
+        
+        
+        hamtaAnvandarID(varde);
+        
+        int anvandareID = hamtaAnvandarID(varde);
+        
+        String anvandarIDString = Integer.toString(anvandareID);
+        
+        try {
+            String sql = "select fornamn, efternamn, telnr, Epost, Titel from anvandare where AnvandarID = " + anvandarIDString;
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            ResultSet rs = pst.executeQuery(sql);
+
+            while (rs.next()) {
+
+                guestFornamn = rs.getString(2);
+                guestEfternamn = rs.getString(3);
+                guestTelnr = rs.getString(4);
+                guestEpost = rs.getString(5);
+                guestTitel = rs.getString(9);
+                
+
+            }
+
+            
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    
+        public String getGuestFornamn(){
+            return guestFornamn;
+        }
+        
+         public String getGuestEfternamn(){
+            return guestEfternamn;
+        }
+    
+          public String getGuestTitel(){
+            return guestTitel;
+        }
           
-          
-      
-      }
-      
-      public void hamtaAnvandarID(){
-          
-      }
-      
+           public String getGuestTelnr(){
+            return guestTelnr;
+        }
+           
+            public String getGuestEpost(){
+            return guestEpost;
+        }
 }
+
+   
+
 /* 
 try {
          
@@ -124,8 +208,4 @@ try {
 
 
     }
-*/
-    
-    
-    
-
+ */

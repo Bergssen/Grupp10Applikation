@@ -7,7 +7,16 @@ package Grupp10Applikation;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,7 +35,7 @@ public class huvudFonster extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         nysida = new AnvändarSida("Lars");
         initComponents();
-        namn();
+        klickaAnvandarenamn();
         
     }
 
@@ -140,7 +149,8 @@ public class huvudFonster extends javax.swing.JFrame {
                         .addComponent(sbFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(399, 399, 399)
-                        .addComponent(jLabel3)))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -230,7 +240,7 @@ public class huvudFonster extends javax.swing.JFrame {
     public void informationDisplay(){
         Sql anslutning = new Sql();
         
-        Statement stmt = conn.createStatement();
+        anslutning.getResultGuestVarde(jLabel3);
         
         
         
@@ -243,7 +253,7 @@ public class huvudFonster extends javax.swing.JFrame {
   
       
  
-    public void namn()  
+    public void klickaAnvandarenamn()  
     {  
        
        jLabel3.addMouseListener(new MouseAdapter()  
@@ -256,6 +266,8 @@ public class huvudFonster extends javax.swing.JFrame {
        
        nysida.andraSynlighettext();
        nysida.andraSynlighetknapp();
+       
+       informationDisplay();
        //nysida.setInstallningar2(btnInstallning);
        
     }  

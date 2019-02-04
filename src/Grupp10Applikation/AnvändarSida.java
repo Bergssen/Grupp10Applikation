@@ -40,6 +40,18 @@ public class AnvändarSida extends javax.swing.JFrame {
     public void setInstallningar2(JButton svar){
         svar.setVisible(false);
     }
+    
+    public void setGuestInfo(String fornamn1, String efternamn1, String titel1, String epost1, String telefonnr1){
+        
+        String fornamn = fornamn1;
+        String efternamn = efternamn1;
+        String titel = titel1;
+        String epost = epost1;
+        String telefonnr= telefonnr1;
+        
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -265,9 +277,12 @@ public class AnvändarSida extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnInstallningActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    public void setGuestVarde(String fornamn, String efternamn, String epost, String telnr, String titel){
+        
+       
+        
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
