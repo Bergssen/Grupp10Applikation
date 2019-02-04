@@ -1,9 +1,9 @@
 package Grupp10Applikation;
 
-<<<<<<< HEAD
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
-=======
+
 import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
->>>>>>> Mathias
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -37,7 +37,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         guestAnvandare="";
         sql = new Sql();
         initComponents();
-        visaProfilbild();
+        visaProfilbild(anvandare);
     }
     
     public AnvändarSida(String anvandarnamn, String guestNamn){
@@ -47,7 +47,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         
         initComponents();
         sql = new Sql();
-        
+        visaProfilbild(guestNamn);
         
     }
     
@@ -319,7 +319,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void visaProfilbild()
+    private void visaProfilbild(String anvandare)
     {
     
          try{
