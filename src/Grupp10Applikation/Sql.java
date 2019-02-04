@@ -92,6 +92,10 @@ public class Sql {
       
       }
       
+      public void hamtaAnvandarID(){
+          
+      }
+      
 }
 /* 
 try {

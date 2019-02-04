@@ -1,5 +1,8 @@
 package Grupp10Applikation;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,6 +23,22 @@ public class AnvändarSida extends javax.swing.JFrame {
     public AnvändarSida(String anvandarNamn) {
         anvandare = anvandarNamn;
         initComponents();
+    }
+    
+    public void setInstallningar(JLabel svar){
+        svar.setVisible(false);
+    }
+    
+    public void andraSynlighettext(){
+        jLabel2.setVisible(false);
+    }
+    
+    public void andraSynlighetknapp(){
+        btnInstallning.setVisible(false);
+    }
+    
+    public void setInstallningar2(JButton svar){
+        svar.setVisible(false);
     }
 
     /**
