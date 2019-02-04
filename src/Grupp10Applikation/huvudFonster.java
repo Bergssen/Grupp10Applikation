@@ -210,8 +210,11 @@ public class huvudFonster extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFlodeActionPerformed
 
     private void btnVisaProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaProfilActionPerformed
-        new AnvändarSida(anvandare).setVisible(true);
+        AnvändarSida nySida = new AnvändarSida(anvandare);
+        nySida.textAnvandare();
+        nySida.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_btnVisaProfilActionPerformed
 
     /**
