@@ -180,8 +180,7 @@ public class LogIn extends javax.swing.JFrame {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-<<<<<<< HEAD
-        
+
         Metoder metod = new Metoder();
         
        String admin =  metod.adminTrueOrFalse(jTextField1.getText());
@@ -197,14 +196,13 @@ public class LogIn extends javax.swing.JFrame {
         }
             loggain();
             
-=======
-     
+
         
         
         kollaAdmin();
         
         loggain();
->>>>>>> origin/Robin
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void kollaAdmin(){

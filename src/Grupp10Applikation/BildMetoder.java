@@ -45,7 +45,7 @@ public class BildMetoder {
         }
         catch (SQLException ex) 
         {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+        
         }
     }
     
@@ -88,11 +88,11 @@ public class BildMetoder {
                 pst.execute();
                 pst.close();
         } catch (SQLException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+       
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+           
         } catch (IOException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+           
         }
     
     }

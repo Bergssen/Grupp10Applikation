@@ -173,9 +173,7 @@ public class Sql {
           
           return resultat;
       }
-<<<<<<< HEAD
-=======
-      
+
       
       
       
@@ -211,7 +209,7 @@ public class Sql {
       }
       
           }
->>>>>>> origin/Robin
+
       
       public static String adminTrueFalse(String anvandare){
         String svar = "";
