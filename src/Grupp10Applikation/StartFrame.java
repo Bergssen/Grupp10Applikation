@@ -23,7 +23,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class StartFrame extends javax.swing.JFrame {
 
     private String sqlNamn;
-    private PreparedStatement pst ;
+    private PreparedStatement pst;
     private Connection con;
     private String  filvag ;
     private Metoder metoder;
@@ -32,8 +32,8 @@ public class StartFrame extends javax.swing.JFrame {
         initComponents();
         
             metoder = new Metoder();
-            PreparedStatement pst = null;
-            Connection con = null;
+            pst = null;
+            con = null;
             this.pst = pst;
             
         try {
