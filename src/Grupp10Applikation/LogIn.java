@@ -13,6 +13,12 @@ import java.awt.event.KeyEvent;
  * @author Chris
  */
 public class LogIn extends javax.swing.JFrame {
+    
+    public static void main(String args[]) {
+        
+        LogIn nysida = new LogIn();
+        nysida.setVisible(true);
+    }
 
     /**
      * Creates new form LogIn
