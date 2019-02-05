@@ -28,30 +28,35 @@ public class AnvändarSida extends javax.swing.JFrame {
     private final String anvandare;
     private final Sql sql;
     private final String guestAnvandare;
+    private final int admin;
     /**
      * Creates new form AnvändarSida
      * @param anvandarNamn
      */
-    public AnvändarSida(String anvandarNamn) {
+    public AnvändarSida(String anvandarNamn, int admin) {
         anvandare = anvandarNamn;
         guestAnvandare="";
         sql = new Sql();
         initComponents();
         visaProfilbild(anvandare);
+        this.admin =admin;
     }
     
-    public AnvändarSida(String anvandarnamn, String guestNamn){
+    public AnvändarSida(String anvandarnamn, String guestNamn, int admin){
         
         guestAnvandare = guestNamn;
         anvandare = anvandarnamn;
-        
+        this.admin=admin;
         initComponents();
         sql = new Sql();
         visaProfilbild(guestNamn);
         
     }
     
+  public int arAdmin(){
   
+  return admin;
+  }
 
     public void setInstallningar(JLabel svar){
         svar.setVisible(false);
@@ -317,6 +322,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void visaProfilbild(String anvandare)
@@ -371,12 +377,12 @@ public class AnvändarSida extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
         
-      this.setVisible(false);
+     
       
-      huvudFonster home = new huvudFonster(anvandare);
+      huvudFonster home = new huvudFonster(anvandare, arAdmin());
       
       home.setVisible(true);
-        
+       dispose();
         
         
         
