@@ -12,12 +12,14 @@ package Grupp10Applikation;
 public class Inställningar extends javax.swing.JFrame {
     private final String anvandare;
     private Sql sql;
+    private BildMetoder bildMetoder;
     /**
      * Creates new form Inställningar
      */
     public Inställningar(String anvandare) {
         this.anvandare = anvandare;
         sql = new Sql();
+        bildMetoder = new BildMetoder();
         initComponents();
     }
 
@@ -31,8 +33,8 @@ public class Inställningar extends javax.swing.JFrame {
     private void initComponents() {
 
         btnAndraNamn = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jLProfilbild = new javax.swing.JLabel();
+        jBValjbild = new javax.swing.JButton();
         txtAndraNamn = new javax.swing.JTextField();
         txtAndraEfternamn = new javax.swing.JTextField();
         txtAndraTitel = new javax.swing.JTextField();
@@ -53,15 +55,20 @@ public class Inställningar extends javax.swing.JFrame {
         btnAndraLosen = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jBSparabild = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnAndraNamn.setBackground(new java.awt.Color(255, 255, 255));
         btnAndraNamn.setForeground(new java.awt.Color(153, 153, 153));
 
-        jLabel1.setText("jLabel1");
-
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jBValjbild.setBackground(new java.awt.Color(255, 255, 255));
+        jBValjbild.setText("Välj profilbild");
+        jBValjbild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBValjbildActionPerformed(evt);
+            }
+        });
 
         txtAndraNamn.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
@@ -143,6 +150,13 @@ public class Inställningar extends javax.swing.JFrame {
 
         jLabel8.setText("Repetera nya lösenordet");
 
+        jBSparabild.setText("Spara Bild");
+        jBSparabild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSparabildActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout btnAndraNamnLayout = new javax.swing.GroupLayout(btnAndraNamn);
         btnAndraNamn.setLayout(btnAndraNamnLayout);
         btnAndraNamnLayout.setHorizontalGroup(
@@ -200,22 +214,26 @@ public class Inställningar extends javax.swing.JFrame {
                                     .addComponent(btnAndraLosen)))))
                     .addGroup(btnAndraNamnLayout.createSequentialGroup()
                         .addGap(145, 145, 145)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(jButton2)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addComponent(jLProfilbild, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBValjbild)
+                            .addComponent(jBSparabild, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         btnAndraNamnLayout.setVerticalGroup(
             btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(btnAndraNamnLayout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLProfilbild, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(btnAndraNamnLayout.createSequentialGroup()
                         .addGap(164, 164, 164)
-                        .addComponent(jButton2)))
-                .addGap(75, 75, 75)
+                        .addComponent(jBValjbild)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBSparabild)))
+                .addGap(77, 77, 77)
                 .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAndraNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
@@ -256,7 +274,7 @@ public class Inställningar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAndraNamn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAndraNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,6 +337,14 @@ public void textInstallningar()
            sql.andraTelefonnummer(tele);
     }//GEN-LAST:event_btnAndraTeleNrActionPerformed
 
+    private void jBValjbildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBValjbildActionPerformed
+       jLProfilbild.setIcon(bildMetoder.valjProfilBild());        
+    }//GEN-LAST:event_jBValjbildActionPerformed
+
+    private void jBSparabildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSparabildActionPerformed
+        bildMetoder.laddaUppBildDatabas(anvandare);
+    }//GEN-LAST:event_jBSparabildActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -361,9 +387,10 @@ public void textInstallningar()
     private javax.swing.JPanel btnAndraNamn;
     private javax.swing.JButton btnAndraTeleNr;
     private javax.swing.JButton btnAndraTitel;
+    private javax.swing.JButton jBSparabild;
+    private javax.swing.JButton jBValjbild;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLProfilbild;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
