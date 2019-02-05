@@ -43,7 +43,7 @@ public class BildMetoder {
             
         try 
         {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
             this.con=conn;
         }
         catch (SQLException ex) 

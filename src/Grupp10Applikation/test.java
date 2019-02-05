@@ -79,7 +79,7 @@ public class test extends javax.swing.JFrame {
            byte[] imageBytes;
            Image image;
            Class.forName("com.mysql.jdbc.Driver");
-           Connection con=DriverManager.getConnection("jdbc:mysql://10.22.25.76/namn", "Nikola", "password1234");
+           Connection con=DriverManager.getConnection("jdbc:mysql://10.22.27.229/namn", "Nikola", "password1234");
            PreparedStatement ps=con.prepareStatement("select Profilbild from anvandare where AnvandareID = 11");
           
            ResultSet rs = ps.executeQuery();
