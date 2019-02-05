@@ -21,15 +21,14 @@ import javax.swing.JOptionPane;
  * @author User
  */
 public class Sql {
-    
-    
+
     private static Connection conn;
     private String anvandare;
-    private String guestFornamn ="";
-    private String guestEfternamn ="";
-    private String guestTitel ="";
-    private String guestEpost ="";
-    private String guestTelnr ="";
+    private String guestFornamn = "";
+    private String guestEfternamn = "";
+    private String guestTitel = "";
+    private String guestEpost = "";
+    private String guestTelnr = "";
     private int anvandarID = 0;
 
     public Sql() {
@@ -79,27 +78,10 @@ public class Sql {
         return hittad;
 
     }
-    
-    
-
-    public void andraLosen(String losen) {
-
-        String nyalosen = losen;
-
-        try {
-            String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
-            PreparedStatement pst = conn.prepareStatement(sql);
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
 
     public int hamtaAnvandarID(JLabel varde) {
 
         String anvandarenamnGuest = varde.getText();
-        
 
         try {
             String sql = "select AnvandareID from anvandare where Anvandarnamn = " + "'" + anvandarenamnGuest + "'";
@@ -118,23 +100,20 @@ public class Sql {
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return anvandarID;
     }
-    
-    
-    public void getResultGuestVarde(JLabel varde){
-        
-        
-        
+
+    public void getResultGuestVarde(JLabel varde) {
+
         hamtaAnvandarID(varde);
-        
+
         int anvandareID = hamtaAnvandarID(varde);
-        
+
         String anvandarIDString = Integer.toString(anvandareID);
-        
+
         try {
-<<<<<<< HEAD
+
             String sql = "select fornamn, efternamn, telnr, Epost, Titel from anvandare where AnvandareID = " + anvandarIDString;
             PreparedStatement pst = conn.prepareStatement(sql);
 
@@ -147,207 +126,163 @@ public class Sql {
                 guestTelnr = rs.getString(3);
                 guestEpost = rs.getString(4);
                 guestTitel = rs.getString(5);
-                
 
             }
 
-=======
-           String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          pst.executeUpdate();
-          JOptionPane.showMessageDialog(null, "Ditt lösenord är ändrat");
->>>>>>> Oskar
-            
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void andraLosen(String losen) {
+
+        String nyalosen = losen;
+
+        try {
+
+            String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Ditt lösenord är ändrat");
 
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
-      }
-      public void andraFornamn(String fornamn){
-          
-         try {
-           String sql = "Update anvandare set fornamn='" + fornamn + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
-          
-            
+    public void andraFornamn(String fornamn) {
+
+        try {
+            String sql = "Update anvandare set fornamn='" + fornamn + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            int updateCount = pst.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-     }
-         public void andraEfternamn(String efternamn){
-          
-         try {
-           String sql = "Update anvandare set efternamn='" + efternamn + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
-          
-            
+    }
+
+    public void andraEfternamn(String efternamn) {
+
+        try {
+            String sql = "Update anvandare set efternamn='" + efternamn + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            int updateCount = pst.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-     }
-      
-            public void andraTitel(String titel){
-          
-         try {
-           String sql = "Update anvandare set titel='" + titel + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
-          
-            
+    }
+
+    public void andraTitel(String titel) {
+
+        try {
+            String sql = "Update anvandare set titel='" + titel + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            int updateCount = pst.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-     }
-      
-         public void andraEpost(String epost){
-          
-         try {
-           String sql = "Update anvandare set epost='" + epost + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
-          
-            
+    }
+
+    public void andraEpost(String epost) {
+
+        try {
+            String sql = "Update anvandare set epost='" + epost + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            int updateCount = pst.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-     }
-      
-            public void andraTelefonnummer(String telefon){
-          
-         try {
-           String sql = "Update anvandare set telnr='" + telefon + "'" + "where Anvandarnamn='" + anvandare + "'";
-           PreparedStatement pst = conn.prepareStatement(sql);
-          int updateCount = pst.executeUpdate();
-          
-            
+    }
+
+    public void andraTelefonnummer(String telefon) {
+
+        try {
+            String sql = "Update anvandare set telnr='" + telefon + "'" + "where Anvandarnamn='" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            int updateCount = pst.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-     }
-      
+    }
 
+    public String getGuestFornamn() {
+        return guestFornamn;
+    }
 
-        
-    
-    
-    
-        public String getGuestFornamn(){
-            return guestFornamn;
-        }
-        
-         public String getGuestEfternamn(){
-            return guestEfternamn;
-        }
-    
-          public String getGuestTitel(){
-            return guestTitel;
-        }
-          
-           public String getGuestTelnr(){
-            return guestTelnr;
-        }
-           
-            public String getGuestEpost(){
-            return guestEpost;
-        }
+    public String getGuestEfternamn() {
+        return guestEfternamn;
+    }
 
+    public String getGuestTitel() {
+        return guestTitel;
+    }
 
-   
+    public String getGuestTelnr() {
+        return guestTelnr;
+    }
 
+    public String getGuestEpost() {
+        return guestEpost;
+    }
 
-            
-      
-      public String fyllText(String anvandare, String kolumn)
-      {
-          String resultat = "";
-          
-          try
-          {
-           Statement stmt = conn.createStatement();
-           ResultSet rs = stmt.executeQuery("select "+kolumn+" from anvandare where Anvandarnamn = '"+anvandare+"'");
-           if(rs.next())
-           {
-           resultat = rs.getString(1);
-           }
+    public String fyllText(String anvandare, String kolumn) {
+        String resultat = "";
+
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select " + kolumn + " from anvandare where Anvandarnamn = '" + anvandare + "'");
+            if (rs.next()) {
+                resultat = rs.getString(1);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
-          
-          
-          return resultat;
-      }
-<<<<<<< HEAD
-          
-} 
-=======
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-       public String kollaAdmin(String anvandare)
-      {
-          String resultat = "";
-          
-          try
-          {
-           Statement stmt = conn.createStatement();
-           ResultSet rs = stmt.executeQuery("select admin from anvandare where Anvandarnamn = '"+anvandare+"'");
-           if(rs.next())
-           {
-           resultat = rs.getString(1);
-           }
+        return resultat;
+    }
+
+    public String kollaAdmin(String anvandare) {
+        String resultat = "";
+
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select admin from anvandare where Anvandarnamn = '" + anvandare + "'");
+            if (rs.next()) {
+                resultat = rs.getString(1);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
-          
-        System.out.println(resultat);  
-          return resultat;
-      }
-      
-          
 
-      
-      public static String adminTrueFalse(String anvandare){
+        System.out.println(resultat);
+        return resultat;
+    }
+
+    public static String adminTrueFalse(String anvandare) {
         String svar = "";
-        
-          try {
-            
-            String SqlFraga = "select anvandare.Admin from anvandare where anvandare.Anvandarnamn = '"+ anvandare + "'";
-         
-           PreparedStatement pst = conn.prepareStatement(SqlFraga);
-         ResultSet rssvar = pst.executeQuery();
-          
-           svar = rssvar.toString();
-            
+
+        try {
+
+            String SqlFraga = "select anvandare.Admin from anvandare where anvandare.Anvandarnamn = '" + anvandare + "'";
+
+            PreparedStatement pst = conn.prepareStatement(SqlFraga);
+            ResultSet rssvar = pst.executeQuery();
+
+            svar = rssvar.toString();
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-          
+
         return svar;
-      }
-      
-      
+    }
+
 }
-
-        
-         
->>>>>>> Oskar
-
 
 /* 
 try {

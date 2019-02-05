@@ -48,11 +48,11 @@ public class BildMetoder {
         }
         catch (SQLException ex) 
         {
-<<<<<<< HEAD
+
             
-=======
+
         
->>>>>>> Oskar
+
         }
     }
     
@@ -75,7 +75,7 @@ public class BildMetoder {
     public void laddaUppBildDatabas(String anvandarNamn)
     {
     
-         try {
+        try{
                 File image = new File(filename); // filename ligger i fältet och instansieras i metoden valjBild.
                 FileInputStream imageInputStream = new FileInputStream(image);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -95,19 +95,12 @@ public class BildMetoder {
                 pst.execute();
                 pst.close();
         } catch (SQLException ex) {
-<<<<<<< HEAD
+
             
         } catch (FileNotFoundException ex) {
-            
+            Logger.getLogger(BildMetoder.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            
-=======
-       
-        } catch (FileNotFoundException ex) {
-           
-        } catch (IOException ex) {
-           
->>>>>>> Oskar
+            Logger.getLogger(BildMetoder.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }
