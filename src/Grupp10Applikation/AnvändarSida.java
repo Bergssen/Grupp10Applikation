@@ -379,7 +379,7 @@ public class AnvändarSida extends javax.swing.JFrame {
         
      
       
-      huvudFonster home = new huvudFonster(anvandare, arAdmin());
+      huvudFonster home = new huvudFonster(anvandare, admin);
       
       home.setVisible(true);
        dispose();
