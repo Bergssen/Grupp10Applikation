@@ -44,7 +44,6 @@ public class huvudFonster extends javax.swing.JFrame {
         initComponents();
 
         klickaAnvandarenamn();
-        
 
         lblValkomst.setText("Välkommen! Du är inloggad som användare.");
     }
