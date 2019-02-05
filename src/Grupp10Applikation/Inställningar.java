@@ -214,19 +214,12 @@ public class Inställningar extends javax.swing.JFrame {
                                     .addComponent(btnAndraLosen)))))
                     .addGroup(btnAndraNamnLayout.createSequentialGroup()
                         .addGap(145, 145, 145)
-<<<<<<< HEAD
                         .addComponent(jLProfilbild, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jBValjbild)
                             .addComponent(jBSparabild, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(68, Short.MAX_VALUE))
-=======
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(jButton2)))
                 .addContainerGap(41, Short.MAX_VALUE))
->>>>>>> Oskar
         );
         btnAndraNamnLayout.setVerticalGroup(
             btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
