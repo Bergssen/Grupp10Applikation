@@ -29,16 +29,36 @@ import javax.swing.JOptionPane;
 
 public class huvudFonster extends javax.swing.JFrame {
 
+<<<<<<< HEAD
     public final String anvandare;
     private AnvändarSida nysida;
     
     
+=======
+    private final String anvandare;
+    private int admin = 0;
+    /**
+     * Creates new form huvudFonster
+     * @param anvandarNamn
+     */
+>>>>>>> Oskar
     public huvudFonster(String anvandarNamn) {
         anvandare = anvandarNamn;
         
         initComponents();
+<<<<<<< HEAD
         klickaAnvandarenamn();
         
+=======
+        lblValkomst.setText("Välkommen! Du är inloggad som användare.");
+    }
+    
+    public huvudFonster(String anvandarNamn, int admin) {
+        anvandare = anvandarNamn;
+        this.admin = admin;
+        initComponents();
+        lblValkomst.setText("Välkommen! Du är inloggad som Admin");
+>>>>>>> Oskar
     }
 
     /**

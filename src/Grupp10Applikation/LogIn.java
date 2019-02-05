@@ -13,12 +13,20 @@ import java.awt.event.KeyEvent;
  * @author Chris
  */
 public class LogIn extends javax.swing.JFrame {
+    
+    public static void main(String args[]) {
+        
+        LogIn nysida = new LogIn();
+        nysida.setVisible(true);
+    }
 
+       
     /**
      * Creates new form LogIn
      */
     public LogIn() {
         initComponents();
+        
     }
 
     /**
@@ -154,13 +162,14 @@ public class LogIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loggain(){
+    private void loggain(int admin){
     
       String Anvandare = jTextField1.getText();
         String Losen = jPasswordField1.getText();
         Sql sql = new Sql();
+        int arAdmin = admin;
         
-        if(sql.inlogg(Anvandare, Losen))
+        if(sql.inlogg(Anvandare, Losen)&& admin==0)
         {
         huvudFonster huvudfonster = new huvudFonster(Anvandare);
         Sql sql1 = new Sql(Anvandare);
@@ -168,16 +177,45 @@ public class LogIn extends javax.swing.JFrame {
         this.setVisible(false);
         }
     
-    
+        else if (sql.inlogg(Anvandare, Losen)&& admin==1){
+        
+        huvudFonster huvudfonster = new huvudFonster(Anvandare, admin);
+        Sql sql1 = new Sql(Anvandare);
+        huvudfonster.setVisible(true);
+        this.setVisible(false);
+        
+        }
     }
     
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        loggain();
+
+       
+        kollaAdmin();
+        
+        loggain(kollaAdmin());
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private int kollaAdmin(){
+        int svar = 0;
+         Sql sql = new Sql();
+       
+       String inlogg = jTextField1.getText();
+       
+      if( sql.kollaAdmin(inlogg).equals("true")){
+          
+      svar = 1;
+      }
+        
+       
+      return svar;
+    }
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
            if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-               loggain();
+               kollaAdmin();
+               loggain(kollaAdmin());
         
         }
     }//GEN-LAST:event_jPasswordField1KeyPressed

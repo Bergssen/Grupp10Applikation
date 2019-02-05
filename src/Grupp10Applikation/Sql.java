@@ -134,6 +134,7 @@ public class Sql {
         String anvandarIDString = Integer.toString(anvandareID);
         
         try {
+<<<<<<< HEAD
             String sql = "select fornamn, efternamn, telnr, Epost, Titel from anvandare where AnvandareID = " + anvandarIDString;
             PreparedStatement pst = conn.prepareStatement(sql);
 
@@ -150,6 +151,12 @@ public class Sql {
 
             }
 
+=======
+           String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + anvandare + "'";
+           PreparedStatement pst = conn.prepareStatement(sql);
+          pst.executeUpdate();
+          JOptionPane.showMessageDialog(null, "Ditt lösenord är ändrat");
+>>>>>>> Oskar
             
 
         } catch (SQLException ex) {
@@ -273,8 +280,73 @@ public class Sql {
           
           return resultat;
       }
+<<<<<<< HEAD
           
 } 
+=======
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+       public String kollaAdmin(String anvandare)
+      {
+          String resultat = "";
+          
+          try
+          {
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery("select admin from anvandare where Anvandarnamn = '"+anvandare+"'");
+           if(rs.next())
+           {
+           resultat = rs.getString(1);
+           }
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+          
+        System.out.println(resultat);  
+          return resultat;
+      }
+      
+          
+
+      
+      public static String adminTrueFalse(String anvandare){
+        String svar = "";
+        
+          try {
+            
+            String SqlFraga = "select anvandare.Admin from anvandare where anvandare.Anvandarnamn = '"+ anvandare + "'";
+         
+           PreparedStatement pst = conn.prepareStatement(SqlFraga);
+         ResultSet rssvar = pst.executeQuery();
+          
+           svar = rssvar.toString();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+        return svar;
+      }
+      
+      
+}
+
+        
+         
+>>>>>>> Oskar
 
 
 /* 
