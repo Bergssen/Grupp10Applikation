@@ -368,7 +368,7 @@ public class AnvändarSida extends javax.swing.JFrame {
     }
     private void btnInstallningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstallningActionPerformed
         
-        Inställningar nySida = new Inställningar(anvandare);
+        Inställningar nySida = new Inställningar(anvandare, admin);
         nySida.textInstallningar();
         nySida.setVisible(true);
         this.setVisible(false);
