@@ -28,7 +28,7 @@ public class Sql {
     
  
         try {
-            Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
+            Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
             conn = conn1;
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
@@ -38,7 +38,7 @@ public class Sql {
         
         this.anvandare = anvandarnamn;
          try {
-            Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
+            Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
             conn = conn1;
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
