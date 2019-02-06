@@ -171,7 +171,7 @@ public class LogIn extends javax.swing.JFrame {
         
         if(sql.inlogg(Anvandare, Losen)&& admin==0)
         {
-        huvudFonster huvudfonster = new huvudFonster(Anvandare);
+        huvudFonster huvudfonster = new huvudFonster(Anvandare,admin);
         Sql sql1 = new Sql(Anvandare);
         huvudfonster.setVisible(true);
         this.setVisible(false);

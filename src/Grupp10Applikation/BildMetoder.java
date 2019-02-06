@@ -5,6 +5,8 @@
  */
 package Grupp10Applikation;
 
+import static com.sun.javafx.tk.Toolkit.getToolkit;
+import java.awt.Component;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +32,7 @@ public class BildMetoder {
     private PreparedStatement pst ;
     private Connection con;
     
-    String filename;
+    private String filename;
     byte[] foto = null;
     
     public BildMetoder()
@@ -40,12 +43,16 @@ public class BildMetoder {
             
         try 
         {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.25.76:3306/namn", "Nikola", "password1234");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
             this.con=conn;
         }
         catch (SQLException ex) 
         {
+
+            
+
         
+
         }
     }
     
@@ -68,7 +75,7 @@ public class BildMetoder {
     public void laddaUppBildDatabas(String anvandarNamn)
     {
     
-         try {
+        try{
                 File image = new File(filename); // filename ligger i fältet och instansieras i metoden valjBild.
                 FileInputStream imageInputStream = new FileInputStream(image);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -79,7 +86,7 @@ public class BildMetoder {
                 }
                 foto = bos.toByteArray();
                 
-                String sql = "update anvandare set profilbild = ? where fornamn = ?";
+                String sql = "update anvandare set profilbild = ? where Anvandarnamn = ?";
           
                 pst = con.prepareStatement(sql);
                 pst.setString(2, anvandarNamn);  
@@ -88,13 +95,13 @@ public class BildMetoder {
                 pst.execute();
                 pst.close();
         } catch (SQLException ex) {
-       
+
+            
         } catch (FileNotFoundException ex) {
-           
+            Logger.getLogger(BildMetoder.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-           
+            Logger.getLogger(BildMetoder.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }
-    
 }
