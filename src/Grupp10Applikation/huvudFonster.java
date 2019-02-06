@@ -38,27 +38,19 @@ public class huvudFonster extends javax.swing.JFrame {
      * @param anvandarNamn
      */
 
-    public huvudFonster(String anvandarNamn) {
-        anvandare = anvandarNamn;
-        
-        initComponents();
-
-<<<<<<< HEAD
-        klickaAnvandarenamn();
-=======
-        
-        
->>>>>>> masterTest
-
-        lblValkomst.setText("Välkommen! Du är inloggad som användare.");
-    }
-    
+   
     public huvudFonster(String anvandarNamn, int admin) {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
+        if(admin==1)
+        {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
-
+        }
+        else
+        {
+        lblValkomst.setText("Välkommen! Du är inloggad som användare.");  
+        }
     }
     
     public int arAdmin(){
