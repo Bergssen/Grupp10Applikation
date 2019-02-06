@@ -37,24 +37,24 @@ public class huvudFonster extends javax.swing.JFrame {
      * Creates new form huvudFonster
      * @param anvandarNamn
      */
-
-    public huvudFonster(String anvandarNamn) {
-        anvandare = anvandarNamn;
-        
-        initComponents();
-
-        klickaAnvandarenamn();
-        
-
-        lblValkomst.setText("Välkommen! Du är inloggad som användare.");
-    }
     
     public huvudFonster(String anvandarNamn, int admin) {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
+        if(admin == 1)
+        {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
+    }
+        else{
+                lblValkomst.setText("Välkommen! Du är inloggad som användare.");
+                }
 
+    }
+    
+    public int arAdmin(){
+    
+    return admin;
     }
 
     /**
@@ -144,6 +144,11 @@ public class huvudFonster extends javax.swing.JFrame {
         jButton1.setText("Skapa nytt inlägg");
 
         jLabel3.setText("Robinhock1");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,8 +172,7 @@ public class huvudFonster extends javax.swing.JFrame {
                         .addComponent(sbFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(399, 399, 399)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel3)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -250,6 +254,7 @@ public class huvudFonster extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtFlodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFlodeActionPerformed
@@ -258,7 +263,7 @@ public class huvudFonster extends javax.swing.JFrame {
     public void informationDisplay(){
         Sql anslutning = new Sql();
         String namn = jLabel3.getText();
-        AnvändarSida nysida = new AnvändarSida(namn); 
+        AnvändarSida nysida = new AnvändarSida(namn, admin);
                 
         anslutning.getResultGuestVarde(jLabel3);
         String fornamn = anslutning.getGuestFornamn();
@@ -276,25 +281,18 @@ public class huvudFonster extends javax.swing.JFrame {
     }
             
     private void btnVisaProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaProfilActionPerformed
-        AnvändarSida nySida = new AnvändarSida(anvandare);
+        AnvändarSida nySida = new AnvändarSida(anvandare, admin);
         nySida.textAnvandare();
         nySida.setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_btnVisaProfilActionPerformed
-  
-      
- 
-    public void klickaAnvandarenamn()  
-    {  
-       
-       jLabel3.addMouseListener(new MouseAdapter()  
-{  
-    public void mouseClicked(MouseEvent e)  
-    {  
-      
-       nysida  = new AnvändarSida(anvandare,jLabel3.getText());
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+         nysida  = new AnvändarSida(anvandare,jLabel3.getText(),arAdmin());
        nysida.setVisible(true);
+       dispose();
        
        nysida.andraSynlighettext();
        nysida.andraSynlighetknapp();
@@ -312,11 +310,16 @@ public class huvudFonster extends javax.swing.JFrame {
         
         
         nysida.setGuestVarde(fornamn, efternamn, epost, telnr, titel);
-       
-    }  
-}); 
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
+  
+      
+ 
+  
+     
 
-    }
+
+    
     
     
     
