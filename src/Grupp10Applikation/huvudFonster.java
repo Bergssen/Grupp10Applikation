@@ -37,12 +37,17 @@ public class huvudFonster extends javax.swing.JFrame {
      * Creates new form huvudFonster
      * @param anvandarNamn
      */
+<<<<<<< HEAD
 
    
+=======
+    
+>>>>>>> masterTest
     public huvudFonster(String anvandarNamn, int admin) {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
+<<<<<<< HEAD
         if(admin==1)
         {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
@@ -51,6 +56,16 @@ public class huvudFonster extends javax.swing.JFrame {
         {
         lblValkomst.setText("Välkommen! Du är inloggad som användare.");  
         }
+=======
+        if(admin == 1)
+        {
+        lblValkomst.setText("Välkommen! Du är inloggad som Admin");
+    }
+        else{
+                lblValkomst.setText("Välkommen! Du är inloggad som användare.");
+                }
+
+>>>>>>> masterTest
     }
     
     public int arAdmin(){
@@ -264,7 +279,7 @@ public class huvudFonster extends javax.swing.JFrame {
     public void informationDisplay(){
         Sql anslutning = new Sql();
         String namn = jLabel3.getText();
-        AnvändarSida nysida = new AnvändarSida(namn, arAdmin()); 
+        AnvändarSida nysida = new AnvändarSida(namn, admin);
                 
         anslutning.getResultGuestVarde(jLabel3);
         String fornamn = anslutning.getGuestFornamn();
@@ -282,7 +297,7 @@ public class huvudFonster extends javax.swing.JFrame {
     }
             
     private void btnVisaProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaProfilActionPerformed
-        AnvändarSida nySida = new AnvändarSida(anvandare, arAdmin());
+        AnvändarSida nySida = new AnvändarSida(anvandare, admin);
         nySida.textAnvandare();
         nySida.setVisible(true);
         this.setVisible(false);
