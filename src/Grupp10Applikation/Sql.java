@@ -282,6 +282,30 @@ public class Sql {
         return svar;
     }
 
+    public String fyllStartflode(){
+     
+     String svar = "";
+        try {
+            
+            String sql = "select text from inlagg order by datum , tid";
+            
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rst = pst.executeQuery();
+            
+            while (rst.next()){
+            svar = svar + "-" + rst.getString(1);
+            
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(svar);
+        return svar;
+    }
+    
+    
 }
 
 /* 
