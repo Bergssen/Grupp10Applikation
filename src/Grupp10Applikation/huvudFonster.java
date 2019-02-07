@@ -270,7 +270,7 @@ public class huvudFonster extends javax.swing.JFrame {
                 
                 textR = sb.toString();
                 
-                System.out.println(textR);
+                
                 
                 lista.add(textR);
                 
@@ -287,7 +287,7 @@ public class huvudFonster extends javax.swing.JFrame {
             sb.append("\n\n\n");
         }
         
-        System.out.println(sb.toString());
+        
         jTextPane1.setText(sb.toString());
         
     }
