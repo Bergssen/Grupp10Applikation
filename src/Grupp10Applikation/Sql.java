@@ -5,6 +5,7 @@
  */
 package Grupp10Applikation;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -265,14 +266,14 @@ public class Sql {
 
     public static String adminTrueFalse(String anvandare) {
         String svar = "";
-
+        
         try {
 
             String SqlFraga = "select anvandare.Admin from anvandare where anvandare.Anvandarnamn = '" + anvandare + "'";
 
             PreparedStatement pst = conn.prepareStatement(SqlFraga);
             ResultSet rssvar = pst.executeQuery();
-
+            
             svar = rssvar.toString();
 
         } catch (SQLException ex) {
@@ -282,6 +283,32 @@ public class Sql {
         return svar;
     }
     
+    //Behöva ta bort?
+    public static String[] hamtaInlagg() throws SQLException
+    {
+        String nyttVarde = "";
+        
+        String sqlFraga = "Select * from inlagg";
+        try
+        {
+        PreparedStatement pst = conn.prepareStatement(sqlFraga);
+        ResultSet rs = pst.executeQuery();
+        
+        while(rs.next())
+        {
+            
+            nyttVarde += rs.getString(3) + ".";
+           
+        }
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        String [] string = nyttVarde.split(".");
+        
+        return string;
+    }
 
 }
 
