@@ -138,37 +138,37 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
       jCKategori.setModel(kategoriModell);
     }
     
-    private void jTTitelFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTTitelFocusGained
-        if(jTTitel.getText().equals("Titel..."))
-        {
-          jTTitel.setText("");
-        }
-        jTTitel.setForeground(Color.black);
-    }//GEN-LAST:event_jTTitelFocusGained
-
-    private void jTAInlaggsTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTAInlaggsTextFocusGained
-        if(jTAInlaggsText.getText().equals("Vad tänker du på?")) 
-        {
-          jTAInlaggsText.setText("");
-        }
-        jTAInlaggsText.setForeground(Color.black);
-    }//GEN-LAST:event_jTAInlaggsTextFocusGained
-
     private void jTTitelFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTTitelFocusLost
         if(jTTitel.getText().equals(""))
         {
-         jTTitel.setText("Titel...");
+            jTTitel.setText("Titel...");
         }
         jTTitel.setForeground(Color.gray);
     }//GEN-LAST:event_jTTitelFocusLost
 
+    private void jTTitelFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTTitelFocusGained
+        if(jTTitel.getText().equals("Titel..."))
+        {
+            jTTitel.setText("");
+        }
+        jTTitel.setForeground(Color.black);
+    }//GEN-LAST:event_jTTitelFocusGained
+
     private void jTAInlaggsTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTAInlaggsTextFocusLost
-       if(jTAInlaggsText.getText().equals(""))
-       {
-         jTAInlaggsText.setText("Vad tänker du på?");
-       }
-       jTAInlaggsText.setForeground(Color.gray);
+        if(jTAInlaggsText.getText().equals(""))
+        {
+            jTAInlaggsText.setText("Vad tänker du på?");
+        }
+        jTAInlaggsText.setForeground(Color.gray);
     }//GEN-LAST:event_jTAInlaggsTextFocusLost
+
+    private void jTAInlaggsTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTAInlaggsTextFocusGained
+        if(jTAInlaggsText.getText().equals("Vad tänker du på?"))
+        {
+            jTAInlaggsText.setText("");
+        }
+        jTAInlaggsText.setForeground(Color.black);
+    }//GEN-LAST:event_jTAInlaggsTextFocusGained
 
     private void jBPubliceraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPubliceraActionPerformed
         String titel = jTTitel.getText();
