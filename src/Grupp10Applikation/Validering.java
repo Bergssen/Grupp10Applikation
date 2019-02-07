@@ -35,32 +35,4 @@ public class Validering {
     
     return resultat;
     }
-  public static boolean kollaSiffra(String text)
-    {         
-        char ch;
-       
-        boolean resultat = false; 
-        if(text.length()>=8)
-        {
-    for(int i=0;i < text.length();i++) {
-        ch = text.charAt(i);
-        if( Character.isDigit(ch)) {
-            resultat = true;
-            break;
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Lösenord måste innehålla minst 1 siffra");
-        }
-        }
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Lösenordet måste vara minst 8 tecken");
-        }
-        
-        
-        
-        return resultat;
-    }
 }
