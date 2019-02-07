@@ -134,7 +134,7 @@ public class Sql {
         }
     }
 
-    public void andraLosen(String losen) {
+    public void andraLosen(String losen,String anvandare) {
 
         String nyalosen = losen;
 
@@ -281,6 +281,7 @@ public class Sql {
 
         return svar;
     }
+    
 
 }
 

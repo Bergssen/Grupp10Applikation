@@ -37,17 +37,11 @@ public class huvudFonster extends javax.swing.JFrame {
      * Creates new form huvudFonster
      * @param anvandarNamn
      */
-<<<<<<< HEAD
 
-   
-=======
-    
->>>>>>> masterTest
     public huvudFonster(String anvandarNamn, int admin) {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
-<<<<<<< HEAD
         if(admin==1)
         {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
@@ -56,7 +50,6 @@ public class huvudFonster extends javax.swing.JFrame {
         {
         lblValkomst.setText("Välkommen! Du är inloggad som användare.");  
         }
-=======
         if(admin == 1)
         {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
@@ -65,7 +58,6 @@ public class huvudFonster extends javax.swing.JFrame {
                 lblValkomst.setText("Välkommen! Du är inloggad som användare.");
                 }
 
->>>>>>> masterTest
     }
     
     public int arAdmin(){

@@ -48,68 +48,56 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel4" min="-2" pref="42" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="txtAndraEpost" min="-2" pref="233" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnAndraEpost" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel4" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="txtAndraEpost" min="-2" pref="233" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel5" min="-2" pref="42" max="-2" attributes="0"/>
+                                          <Component id="jLabel3" max="32767" attributes="0"/>
+                                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabel5" min="-2" pref="42" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" max="32767" attributes="0"/>
-                                              <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="txtAndraEfternamn" min="-2" pref="233" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="btnAndraAlder" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="txtAndraNamn" min="-2" pref="233" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="txtAndraTitel" min="-2" pref="233" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="btnAndraTitel" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtAndraEfternamn" min="-2" pref="233" max="-2" attributes="0"/>
+                                          <Component id="txtAndraNamn" min="-2" pref="233" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="txtAndraTitel" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnAndraTitel" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtAndraTeleNr" min="-2" pref="233" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Component id="btnAndraTeleNr" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="passNya" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="passNyaRep" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnAndraLosen" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Component id="txtAndraTeleNr" min="-2" pref="233" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="passNya" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="passNyaRep" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnAndraLosen" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -150,13 +138,11 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtAndraNamn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtAndraEfternamn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAndraAlder" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -167,13 +153,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAndraEpost" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="txtAndraEpost" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAndraTeleNr" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="txtAndraTeleNr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -260,44 +244,12 @@
             <Property name="text" type="java.lang.String" value="Epost"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnAndraAlder">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraAlderActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="btnAndraTitel">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraTitelActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnAndraTeleNr">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraTeleNrActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnAndraEpost">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraEpostActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAndraTeleNr">
