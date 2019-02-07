@@ -286,33 +286,7 @@ public class Sql {
         return svar;
     }
 
-    public String fyllStartflode(){
-     
-     String svar = "";
-        try {
-            
-            String sql = "select text from inlagg order by datum , tid";
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            ResultSet rst = pst.executeQuery();
-            while (rst.next()){
-            svar = svar + "-" + rst.getString(1);
-            StringBuilder sb = new StringBuilder(svar);
-            int i = 0;
-            
-                while((i= sb.indexOf(" ", i + 100))!=-1){
-                    sb.replace(i, i + 1, "\n");
-                    svar = sb.toString();
-                }
-            }
-            
-          
-        } catch (SQLException ex) {
-            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.println(svar);
-        return svar;
-    }
+ 
     
     
 }
