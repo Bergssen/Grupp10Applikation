@@ -63,6 +63,7 @@ public class Sql {
         int anvID = getAnvandarID();
         String tid = getCurrentTime();
         
+        
         try{
         String sql = "Insert into inlagg (InlaggsID, Titel, text, Tid, Datum, AnvandarID, KategoriID, TillhorFlode) values (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
@@ -337,6 +338,28 @@ public class Sql {
 
     public String getGuestEpost() {
         return guestEpost;
+    }
+    
+    public String[] getKategoriForetag()
+    {
+    
+        String kategorier ="";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("Select namn from kategori " +
+                                             "where Tillhorflode = 1;");
+            
+            while(rs.next())
+            {
+               kategorier += rs.getString("namn") + "\n";
+            }
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String[] allaKategorier = kategorier.split("\n");
+        return allaKategorier;
+        
     }
     
     public String[] getKategorierAktivitet()

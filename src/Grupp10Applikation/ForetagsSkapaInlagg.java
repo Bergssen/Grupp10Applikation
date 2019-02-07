@@ -15,13 +15,13 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author mathias
  */
-public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
+public class ForetagsSkapaInlagg extends javax.swing.JPanel {
 
     Sql sql;
     /**
      * Creates new form AktivitetsSkapaInlagg
      */
-    public AktivitetsSkapaInlagg(String anvandarnamn) {
+    public ForetagsSkapaInlagg(String anvandarnamn) {
         initComponents();
         sql = new Sql(anvandarnamn);
         uppdateraBox();
@@ -134,7 +134,7 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
 
     private void uppdateraBox()
     {
-      DefaultComboBoxModel kategoriModell = new DefaultComboBoxModel(sql.getKategorierAktivitet());
+      DefaultComboBoxModel kategoriModell = new DefaultComboBoxModel(sql.getKategoriForetag());
       jCKategori.setModel(kategoriModell);
     }
     
@@ -144,11 +144,11 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             jTTitel.setText("Titel...");
             jTTitel.setForeground(Color.gray);
         }
-        else if (!jTTitel.getText().equals(""))
+        
+         else if (!jTTitel.getText().equals(""))
         {    
         jTTitel.setForeground(Color.black);
         }
-        
     }//GEN-LAST:event_jTTitelFocusLost
 
     private void jTTitelFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTTitelFocusGained
@@ -165,8 +165,7 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             jTAInlaggsText.setText("Vad tänker du på?");
             jTAInlaggsText.setForeground(Color.gray);
         }
-        
-        else if (!jTAInlaggsText.getText().equals(""))
+         else if (!jTAInlaggsText.getText().equals(""))
         {    
         jTAInlaggsText.setForeground(Color.black);
         }
@@ -178,17 +177,18 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             jTAInlaggsText.setText("");
         }
         jTAInlaggsText.setForeground(Color.black);
+        
     }//GEN-LAST:event_jTAInlaggsTextFocusGained
 
     private void jBPubliceraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPubliceraActionPerformed
         String titel = jTTitel.getText();
         String inlagg = jTAInlaggsText.getText();
         String kategori = (String)jCKategori.getSelectedItem();
-        int flodeID = 2;
+        int flodeID = 1;
         try {
             sql.skapaInlagg(titel, inlagg, flodeID, kategori);
         } catch (ParseException ex) {
-            Logger.getLogger(AktivitetsSkapaInlagg.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ForetagsSkapaInlagg.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBPubliceraActionPerformed
 
