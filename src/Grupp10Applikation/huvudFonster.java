@@ -88,7 +88,6 @@ public class huvudFonster extends javax.swing.JFrame {
                 
                 textR = sb.toString();
                 
-                System.out.println(textR);
                 
                 lista.add(textR);
                 
