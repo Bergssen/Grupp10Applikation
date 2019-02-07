@@ -291,13 +291,18 @@ public class Sql {
             
             PreparedStatement pst = conn.prepareStatement(sql);
             ResultSet rst = pst.executeQuery();
-            
             while (rst.next()){
             svar = svar + "-" + rst.getString(1);
+            StringBuilder sb = new StringBuilder(svar);
+            int i = 0;
             
+                while((i= sb.indexOf(" ", i + 100))!=-1){
+                    sb.replace(i, i + 1, "\n");
+                    svar = sb.toString();
+                }
             }
             
-            
+          
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
