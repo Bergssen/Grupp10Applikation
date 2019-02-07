@@ -345,12 +345,8 @@ public class Sql {
         String kategorier ="";
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select distinct namn from kategori " +
-                                             "join inlagg " +
-                                             "on inlagg.KategoriID = kategori.KategoriID " +
-                                             "join flode " +
-                                             "on flode.FlodeID = inlagg.TillhorFlode " +
-                                             "where flode.FlodeID = 2");
+            ResultSet rs = stmt.executeQuery("Select namn from kategori " +
+                                             "where Tillhorflode = 2;");
             
             while(rs.next())
             {

@@ -6,6 +6,9 @@
 package Grupp10Applikation;
 
 import java.awt.Color;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -172,7 +175,11 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
         String inlagg = jTAInlaggsText.getText();
         String kategori = (String)jCKategori.getSelectedItem();
         int flodeID = 2;
-        sql.skapaInlagg(titel, inlagg, flodeID, kategori);
+        try {
+            sql.skapaInlagg(titel, inlagg, flodeID, kategori);
+        } catch (ParseException ex) {
+            Logger.getLogger(AktivitetsSkapaInlagg.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBPubliceraActionPerformed
 
 
