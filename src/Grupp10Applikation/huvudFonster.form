@@ -49,11 +49,13 @@
                           <Component id="btnVisaAllaFloden" max="32767" attributes="0"/>
                           <Component id="btnBokaEttMöte" max="32767" attributes="0"/>
                           <Component id="btnVisaProfil" max="32767" attributes="0"/>
-                          <Component id="btnForskningsFlode" alignment="0" pref="161" max="32767" attributes="0"/>
-                          <Component id="jButton1" max="32767" attributes="0"/>
+                          <Component id="btnForskningsFlode" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="txtFlode" min="-2" pref="782" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtFlode" min="-2" pref="782" max="-2" attributes="0"/>
+                          <Component id="jPHuvudInlaggPanel" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="sbFlode" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
@@ -122,27 +124,7 @@
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="49" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btnVisaProfil" min="-2" pref="59" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="btnVisaAktivitetsflode" min="-2" pref="59" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="btnForskningsFlode" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="btnForetagsFlode" min="-2" pref="59" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="btnVisaAllaFloden" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="btnBokaEttMöte" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="txtFlode" min="-2" pref="916" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
@@ -157,8 +139,31 @@
                               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="sbFlode" min="-2" pref="865" max="-2" attributes="0"/>
+                              <Component id="sbFlode" min="-2" pref="687" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="btnVisaProfil" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="btnVisaAktivitetsflode" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="btnForskningsFlode" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="btnForetagsFlode" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="btnVisaAllaFloden" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="btnBokaEttMöte" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jPHuvudInlaggPanel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtFlode" min="-2" pref="641" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -188,6 +193,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Visa aktivitetsfl&#xf6;de"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVisaAktivitetsflodeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnForskningsFlode">
       <Properties>
@@ -266,11 +274,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Skapa nytt inl&#xe4;gg"/>
-      </Properties>
-    </Component>
     <Component class="com.toedter.calendar.JCalendar" name="jCalendar1">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -281,5 +284,20 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
       </Events>
     </Component>
+    <Container class="javax.swing.JPanel" name="jPHuvudInlaggPanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="776" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="269" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </SubComponents>
 </Form>

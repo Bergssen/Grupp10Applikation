@@ -5,6 +5,8 @@
  */
 package Grupp10Applikation;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -28,7 +30,9 @@ import javax.swing.JOptionPane;
     
 
 public class huvudFonster extends javax.swing.JFrame {
-
+    GridBagLayout layout = new GridBagLayout();
+    AktivitetsSkapaInlagg pAktivitet;
+    //Panel2 p2;
 
     public final String anvandare;
     private AnvändarSida nysida;
@@ -42,6 +46,18 @@ public class huvudFonster extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
+        
+        pAktivitet = new AktivitetsSkapaInlagg(anvandare);
+        jPHuvudInlaggPanel.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx=0;
+        c.gridy=0;
+        jPHuvudInlaggPanel.add(pAktivitet, c);
+       // c.gridx=0;
+        //c.gridy=0;
+        //jPHuvudInlaggPanel.add(pForetag, c);
+        pAktivitet.setVisible(false);
+        
         if(admin == 1)
         {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
@@ -85,9 +101,9 @@ public class huvudFonster extends javax.swing.JFrame {
         lblInloggadSom = new javax.swing.JLabel();
         jSPValtDatum = new javax.swing.JScrollPane();
         jTAValtDatum = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabel3 = new javax.swing.JLabel();
+        jPHuvudInlaggPanel = new javax.swing.JPanel();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -108,6 +124,11 @@ public class huvudFonster extends javax.swing.JFrame {
         });
 
         btnVisaAktivitetsflode.setText("Visa aktivitetsflöde");
+        btnVisaAktivitetsflode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisaAktivitetsflodeActionPerformed(evt);
+            }
+        });
 
         btnForskningsFlode.setText("Visa forskningsflöde");
 
@@ -141,14 +162,23 @@ public class huvudFonster extends javax.swing.JFrame {
         jTAValtDatum.setText("Här visas information om valt datum");
         jSPValtDatum.setViewportView(jTAValtDatum);
 
-        jButton1.setText("Skapa nytt inlägg");
-
         jLabel3.setText("Robinhock1");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
+
+        javax.swing.GroupLayout jPHuvudInlaggPanelLayout = new javax.swing.GroupLayout(jPHuvudInlaggPanel);
+        jPHuvudInlaggPanel.setLayout(jPHuvudInlaggPanelLayout);
+        jPHuvudInlaggPanelLayout.setHorizontalGroup(
+            jPHuvudInlaggPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 776, Short.MAX_VALUE)
+        );
+        jPHuvudInlaggPanelLayout.setVerticalGroup(
+            jPHuvudInlaggPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 269, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,10 +194,11 @@ public class huvudFonster extends javax.swing.JFrame {
                             .addComponent(btnVisaAllaFloden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnBokaEttMöte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnVisaProfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnForskningsFlode, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnForskningsFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(79, 79, 79)
-                        .addComponent(txtFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPHuvudInlaggPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sbFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -218,25 +249,7 @@ public class huvudFonster extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnVisaProfil, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(btnVisaAktivitetsflode, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(btnForskningsFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(btnForetagsFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(btnVisaAllaFloden, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(btnBokaEttMöte, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(txtFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 916, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(28, 28, 28)
@@ -249,8 +262,27 @@ public class huvudFonster extends javax.swing.JFrame {
                                 .addComponent(jSPValtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(104, 104, 104))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(sbFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68))))))
+                                .addComponent(sbFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(68, 68, 68))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnVisaProfil, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(btnVisaAktivitetsflode, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(btnForskningsFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(btnForetagsFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(37, 37, 37)
+                                        .addComponent(btnVisaAllaFloden, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(btnBokaEttMöte, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jPHuvudInlaggPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(55, 55, 55))))))
         );
 
         pack();
@@ -312,6 +344,11 @@ public class huvudFonster extends javax.swing.JFrame {
         nysida.setGuestVarde(fornamn, efternamn, epost, telnr, titel);
         
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void btnVisaAktivitetsflodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaAktivitetsflodeActionPerformed
+        pAktivitet.setVisible(true);
+        //pForetag.setVisible(false);
+    }//GEN-LAST:event_btnVisaAktivitetsflodeActionPerformed
   
       
  
@@ -363,10 +400,10 @@ public class huvudFonster extends javax.swing.JFrame {
     private javax.swing.JButton btnVisaAllaFloden;
     private javax.swing.JButton btnVisaMedelande;
     private javax.swing.JButton btnVisaProfil;
-    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPHuvudInlaggPanel;
     private javax.swing.JScrollPane jSPValtDatum;
     private javax.swing.JTextArea jTAValtDatum;
     private javax.swing.JLabel lblInloggadSom;
