@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Nikola/Desktop/Grupp10Applikation/Grupp10Applikation/src/Grupp10Applikation/Inställningar.java</file>
             <file>file:/C:/Users/Nikola/Desktop/Grupp10Applikation/Grupp10Applikation/src/Grupp10Applikation/Sql.java</file>
             <file>file:/C:/Users/Nikola/Desktop/Grupp10Applikation/Grupp10Applikation/src/Grupp10Applikation/AnvändarSida.java</file>
@@ -11,6 +12,12 @@
             <file>file:/C:/Users/Nikola/Desktop/Grupp10Applikation/Grupp10Applikation/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Nikola/Desktop/Grupp10Applikation/Grupp10Applikation/src/Grupp10Applikation/LogIn.java</file>
             <file>file:/C:/Users/Nikola/Desktop/Grupp10Applikation/Grupp10Applikation/src/Grupp10Applikation/Validering.java</file>
+=======
+            <file>file:/Users/mathias/Documents/GitHub/Grupp10Applikation/src/Grupp10Applikation/AktivitetsSkapaInlagg.java</file>
+            <file>file:/Users/mathias/Documents/GitHub/Grupp10Applikation/src/Grupp10Applikation/Sql.java</file>
+            <file>file:/Users/mathias/Documents/GitHub/Grupp10Applikation/src/Grupp10Applikation/huvudFonster.java</file>
+            <file>file:/Users/mathias/Documents/GitHub/Grupp10Applikation/src/Grupp10Applikation/JPForetagSkapaInlagg.java</file>
+>>>>>>> origin/Mathias
         </group>
     </open-files>
 </project-private>

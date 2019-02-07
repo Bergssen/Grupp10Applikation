@@ -11,6 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -52,6 +55,112 @@ public class Sql {
         }
 
     }
+    
+    public void skapaInlagg(String titel, String inlaggstext, int flodeID, String kategori) throws ParseException
+    {
+        int kategoriID = getKategoriID(kategori);
+        int inlaggsID = incrementInlaggsID();
+        int anvID = getAnvandarID();
+        String tid = getCurrentTime();
+        
+        try{
+        String sql = "Insert into inlagg (InlaggsID, Titel, text, Tid, Datum, AnvandarID, KategoriID, TillhorFlode) values (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, inlaggsID);
+            pst.setString(2, titel);
+            pst.setString(3, inlaggstext);
+            pst.setString(4, tid);
+            pst.setTimestamp(5, getCurrentDate());
+            pst.setInt(6, anvID);
+            pst.setInt(7, kategoriID);
+            pst.setInt(8, flodeID);
+            
+            pst.executeUpdate();
+        }
+        catch(SQLException ex){
+        System.out.print(ex);
+        }
+    }
+    
+    private String getCurrentTime()
+    {
+
+     String time = new SimpleDateFormat("HH:mm").format(new Date());
+     
+     return time;   
+    }
+    
+    private java.sql.Timestamp getCurrentDate() throws ParseException
+    {
+        
+      java.util.Date today = new java.util.Date();
+      return new java.sql.Timestamp(today.getTime());
+    }
+    
+    private int getAnvandarID()
+    {
+        int anvID = 0;
+     try {
+            String sql = "select AnvandareID from anvandare where Anvandarnamn = '" + anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            ResultSet rs = pst.executeQuery(sql);
+
+            while (rs.next()) {
+
+                anvID = rs.getInt(1);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      return anvID;
+    }
+    
+    private int incrementInlaggsID()
+    {
+       int inlaggsID = 0;
+        try {
+            String sql = "Select max(InlaggsID) from inlagg";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            ResultSet rs = pst.executeQuery(sql);
+
+            while (rs.next()) {
+
+            inlaggsID = rs.getInt(1);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        inlaggsID += 1;
+        return inlaggsID;
+    }
+    
+    private int getKategoriID(String kategori)
+    {
+       int kategoriID = 0;
+        
+        try {
+            String sql = "select KategoriID from kategori where namn = " + "'" + kategori + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            ResultSet rs = pst.executeQuery(sql);
+
+            while (rs.next()) {
+
+            kategoriID = rs.getInt(1);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return kategoriID;
+    }
 
     public boolean inlogg(String Anvandare, String Losen) {
         String sqlAnvandare = "";
@@ -79,7 +188,7 @@ public class Sql {
 
     }
 
-    public int hamtaAnvandarID(JLabel varde) {
+    public int hamtaAnvandarIDGast(JLabel varde) {
 
         String anvandarenamnGuest = varde.getText();
 
@@ -107,9 +216,9 @@ public class Sql {
 
     public void getResultGuestVarde(JLabel varde) {
 
-        hamtaAnvandarID(varde);
+        hamtaAnvandarIDGast(varde);
 
-        int anvandareID = hamtaAnvandarID(varde);
+        int anvandareID = hamtaAnvandarIDGast(varde);
 
         String anvandarIDString = Integer.toString(anvandareID);
 
@@ -229,6 +338,30 @@ public class Sql {
 
     public String getGuestEpost() {
         return guestEpost;
+    }
+    
+    public String[] getKategorierAktivitet()
+    {
+        String kategorier ="";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select distinct namn from kategori " +
+                                             "join inlagg " +
+                                             "on inlagg.KategoriID = kategori.KategoriID " +
+                                             "join flode " +
+                                             "on flode.FlodeID = inlagg.TillhorFlode " +
+                                             "where flode.FlodeID = 2");
+            
+            while(rs.next())
+            {
+               kategorier += rs.getString("namn") + "\n";
+            }
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String[] allaKategorier = kategorier.split("\n");
+        return allaKategorier;
     }
 
     public String fyllText(String anvandare, String kolumn) {
