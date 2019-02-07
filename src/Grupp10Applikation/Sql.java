@@ -44,11 +44,7 @@ public class Sql {
     public Sql(String anvandarnamn) {
 
         this.anvandare = anvandarnamn;
-
-         
-
         try {
-
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
             conn = conn1;
         } catch (SQLException ex) {
@@ -57,7 +53,7 @@ public class Sql {
 
     }
 
-    public boolean inlogg(String Anvandare, String Losen){
+    public boolean inlogg(String Anvandare, String Losen) {
         String sqlAnvandare = "";
         String sqlLosen = "";       // Inloggningsfunktionen
         boolean hittad = false;
