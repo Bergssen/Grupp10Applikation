@@ -20,7 +20,8 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
+import java.util.Timer;
+import java.util.TimerTask;
 /**
  *
  * @author oskar
@@ -43,7 +44,15 @@ public class huvudFonster extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
-        fyllStartflode();
+        int tid = 1;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+               fyllStartflode();
+            }
+        },0,100 * 60 * tid);
+      
         if(admin == 1)
         {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
