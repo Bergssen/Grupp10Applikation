@@ -86,7 +86,6 @@ public class huvudFonster extends javax.swing.JFrame {
         jSPValtDatum = new javax.swing.JScrollPane();
         jTAValtDatum = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabel3 = new javax.swing.JLabel();
 
         menu1.setLabel("File");
@@ -164,11 +163,11 @@ public class huvudFonster extends javax.swing.JFrame {
                             .addComponent(btnVisaAllaFloden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnBokaEttMöte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnVisaProfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnForskningsFlode, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                            .addComponent(btnForskningsFlode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(79, 79, 79)
                         .addComponent(txtFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(420, 420, 420)
                         .addComponent(sbFlode, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(399, 399, 399)
@@ -193,11 +192,8 @@ public class huvudFonster extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblInloggadSom)
                                         .addGap(107, 107, 107)
-                                        .addComponent(lblProfilbild))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(133, 133, 133)
-                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(56, Short.MAX_VALUE))))
+                                        .addComponent(lblProfilbild)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(493, 493, 493)
                 .addComponent(lblValkomst)
@@ -243,9 +239,7 @@ public class huvudFonster extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnVisaMedelande, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnTaBortMedelande, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(107, 107, 107)
-                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(175, 175, 175)
+                                .addGap(488, 488, 488)
                                 .addComponent(jSPValtDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(104, 104, 104))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -364,7 +358,6 @@ public class huvudFonster extends javax.swing.JFrame {
     private javax.swing.JButton btnVisaMedelande;
     private javax.swing.JButton btnVisaProfil;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jSPValtDatum;
