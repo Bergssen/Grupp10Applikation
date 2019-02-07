@@ -5,6 +5,7 @@
  */
 package Grupp10Applikation;
 
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -22,6 +23,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 
 /**
  *
@@ -63,50 +66,61 @@ public class huvudFonster extends javax.swing.JFrame {
     }
     
     public void nyttInlagg() {
-        
+
         String textR = "";
-        ArrayList<String> lista = new ArrayList();
         
+        
+
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
-            
+
             Statement stmt = conn.createStatement();
-            
+
             ResultSet rs = stmt.executeQuery("select Text from inlagg");
-            
+
             while (rs.next()) {
-                
+
                 String text = rs.getString(1);
                 
-                StringBuilder sb = new StringBuilder(text);
+                String textHtml = "<html>" + text + "<br/><br/>"+"</html>";
+
                 
+                StringBuilder sb = new StringBuilder(textHtml);
+
                 int i = 0;
                 while ((i = sb.indexOf(" ", i + 100)) != -1) {
-                    sb.replace(i, i + 1, "\n");
-                    
+                    sb.replace(i, i + 1, "<br/>");
+
                 }
+
                 
                 textR = sb.toString();
                 
                 
-                lista.add(textR);
                 
+               // JLabel lbl = new JLabel("<html> hej <br/><br/> </html>");
+                
+               // jTextPane1.insertComponent(lbl);
+ 
+
             }
             
+                /* JLabel lbl = new JLabel("<html> hej <br/><br/> </html>");
+                
+                 jTextPane1.insertComponent(lbl);
+                 
+                 JLabel lbl2 = new JLabel("<html> hallå <br/><br/> </html>");
+                 
+                 jTextPane1.insertComponent(lbl2);
+                 
+                  JLabel lbl3 = new JLabel("<html> MAEEEE <br/><br/> </html>");
+                 
+                 jTextPane1.insertComponent(lbl3); */
+
+
         } catch (SQLException ex) {
             Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        StringBuilder sb = new StringBuilder();
-        
-        for (String s : lista) {
-            sb.append(s);
-            sb.append("\n\n\n");
-        }
-        
-        System.out.println(sb.toString());
-        jTextPane1.setText(sb.toString());
-        
     }
     
    

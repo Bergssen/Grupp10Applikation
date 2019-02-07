@@ -57,8 +57,10 @@ public class InlaggsKlass {
 
     public void hamtaTextMeddelande() {
 
+        
         String textR = "";
-        ArrayList<String> lista = new ArrayList();
+        
+        
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
@@ -79,11 +81,12 @@ public class InlaggsKlass {
 
                 }
 
+                
                 textR = sb.toString();
+                
+                
 
-                System.out.println(textR);
-
-                lista.add(textR);
+              
 
             }
 
