@@ -30,10 +30,7 @@ public class Sql {
     private String guestEpost = "";
     private String guestTelnr = "";
     private int anvandarID = 0;
-<<<<<<< HEAD
-=======
 
->>>>>>> f6e2512d0d596eb6b0c6fb2cd15d94e234bf825b
     public Sql() {
 
         try {
@@ -85,14 +82,7 @@ public class Sql {
     public int hamtaAnvandarID(JLabel varde) {
 
         String anvandarenamnGuest = varde.getText();
-<<<<<<< HEAD
-<<<<<<< HEAD
-       
-=======
-        
->>>>>>> f6e2512d0d596eb6b0c6fb2cd15d94e234bf825b
-=======
->>>>>>> masterTest
+
 
         try {
             String sql = "select AnvandareID from anvandare where Anvandarnamn = " + "'" + anvandarenamnGuest + "'";

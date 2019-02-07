@@ -142,6 +142,11 @@ public class huvudFonster extends javax.swing.JFrame {
         jSPValtDatum.setViewportView(jTAValtDatum);
 
         jButton1.setText("Skapa nytt inlägg");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Robinhock1");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -298,10 +303,7 @@ public class huvudFonster extends javax.swing.JFrame {
        nysida.andraSynlighetknapp();
        
          Sql anslutning = new Sql();
-<<<<<<< HEAD
-       
-=======
->>>>>>> f6e2512d0d596eb6b0c6fb2cd15d94e234bf825b
+
        
                 
         anslutning.getResultGuestVarde(jLabel3);
@@ -316,6 +318,10 @@ public class huvudFonster extends javax.swing.JFrame {
         nysida.setGuestVarde(fornamn, efternamn, epost, telnr, titel);
         
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
   
       
  
