@@ -15,19 +15,17 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author mathias
  */
-public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
+public class ForetagsSkapaInlagg extends javax.swing.JPanel {
 
     Sql sql;
-    private BildMetoder bildmetoder;
     /**
      * Creates new form AktivitetsSkapaInlagg
      */
-    public AktivitetsSkapaInlagg(String anvandarnamn) {
+    public ForetagsSkapaInlagg(String anvandarnamn) {
         initComponents();
         sql = new Sql(anvandarnamn);
         uppdateraBox();
         jTAInlaggsText.setLineWrap(true);
-        bildmetoder = new BildMetoder();
     }
 
     /**
@@ -46,13 +44,11 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jCKategori = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        jBVäljbild = new javax.swing.JButton();
-        jLbild = new javax.swing.JLabel();
-        jBspara = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(776, 269));
         setPreferredSize(new java.awt.Dimension(776, 269));
+        setSize(new java.awt.Dimension(776, 269));
 
         jTAInlaggsText.setColumns(20);
         jTAInlaggsText.setForeground(new java.awt.Color(153, 153, 153));
@@ -93,20 +89,6 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
 
         jLabel2.setText("Välj kategori");
 
-        jBVäljbild.setText("Välj bild");
-        jBVäljbild.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBVäljbildActionPerformed(evt);
-            }
-        });
-
-        jBspara.setText("Spara");
-        jBspara.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBsparaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,31 +96,29 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBPublicera, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLbild, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBVäljbild)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBspara)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addComponent(jBPublicera, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBPublicera))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,23 +127,14 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
                                 .addComponent(jCKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLbild, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBVäljbild)
-                            .addComponent(jBspara))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBPublicera)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void uppdateraBox()
     {
-      DefaultComboBoxModel kategoriModell = new DefaultComboBoxModel(sql.getKategorierAktivitet());
+      DefaultComboBoxModel kategoriModell = new DefaultComboBoxModel(sql.getKategoriForetag());
       jCKategori.setModel(kategoriModell);
     }
     
@@ -173,11 +144,11 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             jTTitel.setText("Titel...");
             jTTitel.setForeground(Color.gray);
         }
-        else if (!jTTitel.getText().equals(""))
+        
+         else if (!jTTitel.getText().equals(""))
         {    
         jTTitel.setForeground(Color.black);
         }
-        
     }//GEN-LAST:event_jTTitelFocusLost
 
     private void jTTitelFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTTitelFocusGained
@@ -194,8 +165,7 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             jTAInlaggsText.setText("Vad tänker du på?");
             jTAInlaggsText.setForeground(Color.gray);
         }
-        
-        else if (!jTAInlaggsText.getText().equals(""))
+         else if (!jTAInlaggsText.getText().equals(""))
         {    
         jTAInlaggsText.setForeground(Color.black);
         }
@@ -207,51 +177,27 @@ public class AktivitetsSkapaInlagg extends javax.swing.JPanel {
             jTAInlaggsText.setText("");
         }
         jTAInlaggsText.setForeground(Color.black);
+        
     }//GEN-LAST:event_jTAInlaggsTextFocusGained
 
     private void jBPubliceraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPubliceraActionPerformed
         String titel = jTTitel.getText();
         String inlagg = jTAInlaggsText.getText();
         String kategori = (String)jCKategori.getSelectedItem();
-        boolean hittad = true;
-        int flodeID = 2;
-        int inlaggsId = sql.incrementInlaggsID();
-        int filID = sql.incrementFilID();
+        int flodeID = 1;
         try {
             sql.skapaInlagg(titel, inlagg, flodeID, kategori);
         } catch (ParseException ex) {
-            Logger.getLogger(AktivitetsSkapaInlagg.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        if(jLbild.getIcon() == null)
-        {
-        hittad = false;
-        }
-        if (hittad)
-        {
-            bildmetoder.laddaUppBildFlode(filID);
-            sql.setInlaggHarBild(inlaggsId, filID);
+            Logger.getLogger(ForetagsSkapaInlagg.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBPubliceraActionPerformed
-
-    private void jBVäljbildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVäljbildActionPerformed
-        jLbild.setIcon(bildmetoder.valjProfilBild());
-       
-    }//GEN-LAST:event_jBVäljbildActionPerformed
-
-    private void jBsparaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsparaActionPerformed
-        
-    }//GEN-LAST:event_jBsparaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBPublicera;
-    private javax.swing.JButton jBVäljbild;
-    private javax.swing.JButton jBspara;
     private javax.swing.JComboBox<String> jCKategori;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLbild;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTAInlaggsText;
     private javax.swing.JTextField jTTitel;
