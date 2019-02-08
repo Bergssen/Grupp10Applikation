@@ -56,12 +56,29 @@ public class Sql {
 
     }
     
+    public void setInlaggHarBild(int inlaggsID, int filID){
+        
+        try{
+        String sql = "Insert into inlagg_har_fil (InlaggsID, FillID) values (?, ?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, inlaggsID);
+            pst.setInt(2, filID);
+            
+            pst.execute();
+        }
+        catch(SQLException ex){
+        System.out.print(ex);
+        }
+        
+    }
+    
     public void skapaInlagg(String titel, String inlaggstext, int flodeID, String kategori) throws ParseException
     {
         int kategoriID = getKategoriID(kategori);
         int inlaggsID = incrementInlaggsID();
         int anvID = getAnvandarID();
         String tid = getCurrentTime();
+        
         
         try{
         String sql = "Insert into inlagg (InlaggsID, Titel, text, Tid, Datum, AnvandarID, KategoriID, TillhorFlode) values (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -80,6 +97,7 @@ public class Sql {
         catch(SQLException ex){
         System.out.print(ex);
         }
+        
     }
     
     private String getCurrentTime()
@@ -118,7 +136,30 @@ public class Sql {
       return anvID;
     }
     
-    private int incrementInlaggsID()
+    public int incrementFilID(){
+        
+          int FILID = 0;
+        try {
+            String sql = "Select max(FILID) from fil";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            ResultSet rs = pst.executeQuery(sql);
+
+            while (rs.next()) {
+
+            FILID = rs.getInt(1);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        FILID += 1;
+        return FILID;
+        
+    }
+    
+    public int incrementInlaggsID()
     {
        int inlaggsID = 0;
         try {
@@ -337,6 +378,28 @@ public class Sql {
 
     public String getGuestEpost() {
         return guestEpost;
+    }
+    
+    public String[] getKategoriForetag()
+    {
+    
+        String kategorier ="";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("Select namn from kategori " +
+                                             "where Tillhorflode = 1;");
+            
+            while(rs.next())
+            {
+               kategorier += rs.getString("namn") + "\n";
+            }
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String[] allaKategorier = kategorier.split("\n");
+        return allaKategorier;
+        
     }
     
     public String[] getKategorierAktivitet()

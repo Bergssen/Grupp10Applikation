@@ -34,7 +34,7 @@ import java.util.TimerTask;
 public class huvudFonster extends javax.swing.JFrame {
     GridBagLayout layout = new GridBagLayout();
     AktivitetsSkapaInlagg pAktivitet;
-    //Panel2 p2;
+    ForetagsSkapaInlagg pForetag;
 
     public final String anvandare;
     private AnvändarSida nysida;
@@ -51,16 +51,17 @@ public class huvudFonster extends javax.swing.JFrame {
 
         
         pAktivitet = new AktivitetsSkapaInlagg(anvandare);
+        pForetag = new ForetagsSkapaInlagg(anvandare);
         jPHuvudInlaggPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx=0;
         c.gridy=0;
         jPHuvudInlaggPanel.add(pAktivitet, c);
-       // c.gridx=0;
-        //c.gridy=0;
-        //jPHuvudInlaggPanel.add(pForetag, c);
+        c.gridx=0;
+        c.gridy=0;
+        jPHuvudInlaggPanel.add(pForetag, c);
         pAktivitet.setVisible(false);
-        
+        pForetag.setVisible(false);
 
         int tid = 1;
         Timer timer = new Timer();
@@ -149,6 +150,11 @@ public class huvudFonster extends javax.swing.JFrame {
         btnVisaAllaFloden.setText("Visa alla flöden");
 
         btnForetagsFlode.setText("Visa företagsflöde");
+        btnForetagsFlode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnForetagsFlodeActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Du har 10000 nya notiser");
@@ -386,7 +392,7 @@ public class huvudFonster extends javax.swing.JFrame {
 
     private void btnVisaAktivitetsflodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaAktivitetsflodeActionPerformed
         pAktivitet.setVisible(true);
-        //pForetag.setVisible(false);
+        pForetag.setVisible(false);
     }//GEN-LAST:event_btnVisaAktivitetsflodeActionPerformed
 
     private void jTextPane1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPane1ActionPerformed
@@ -414,6 +420,11 @@ public class huvudFonster extends javax.swing.JFrame {
         nysida.setGuestVarde(fornamn, efternamn, epost, telnr, titel);
 
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void btnForetagsFlodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForetagsFlodeActionPerformed
+        pForetag.setVisible(true);
+        pAktivitet.setVisible(false);
+    }//GEN-LAST:event_btnForetagsFlodeActionPerformed
   
       
  

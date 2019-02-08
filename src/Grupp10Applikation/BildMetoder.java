@@ -70,7 +70,40 @@ public class BildMetoder {
                 ImageIcon image = new ImageIcon(img);
                 return image;
         
-    }    
+    }  
+    
+    public void laddaUppBildFlode(int FILID){
+        try{
+                File image = new File(filename); // filename ligger i fältet och instansieras i metoden valjBild.
+                FileInputStream imageInputStream = new FileInputStream(image);
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                byte[] buf = new byte[1024];
+                for(int readNum; (readNum = imageInputStream.read(buf)) != -1;)
+                {
+                    bos.write(buf, 0 , readNum);
+                }
+                foto = bos.toByteArray();
+                
+                String sql = "insert into fil (FILID, Fil) values (?, ?)";
+          
+                pst = con.prepareStatement(sql);
+                pst.setInt(1, FILID);  
+                pst.setBytes(2, foto);
+
+                pst.execute();
+                pst.close();
+        } catch (SQLException ex) {
+
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BildMetoder.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(BildMetoder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
+    }
+    
     
     public void laddaUppBildDatabas(String anvandarNamn)
     {
