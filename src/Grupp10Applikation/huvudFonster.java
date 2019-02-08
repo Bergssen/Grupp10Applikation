@@ -22,6 +22,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
@@ -71,8 +72,8 @@ public class huvudFonster extends javax.swing.JFrame {
         
         
 
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
+      // try {
+          /*  Connection conn = DriverManager.getConnection("jdbc:mysql://10.22.27.229:3306/namn", "Nikola", "password1234");
 
             Statement stmt = conn.createStatement();
 
@@ -103,24 +104,39 @@ public class huvudFonster extends javax.swing.JFrame {
                // jTextPane1.insertComponent(lbl);
  
 
-            }
+            }*/
             
-                /* JLabel lbl = new JLabel("<html> hej <br/><br/> </html>");
+                String textHtml = "<html> sdaf asdfasdfasdf asdfasdf asdfasdf sadfsadf sadfasdf sadfasdf asdfasdfsad asdfasdf asdfadsf  asdfasdf sadfasdfsadf sadfasdf asdfasdf </html>";
                 
-                 jTextPane1.insertComponent(lbl);
+                StringBuilder sb = new StringBuilder(textHtml);
+
+                int i = 0;
+                while ((i = sb.indexOf(" ", i + 100)) != -1) {
+                    sb.replace(i, i + 1, "<br/>");
+
+                }
+                
+                textR = sb.toString();
+                for (int i2 = 0; i2 < 10; i2++) {
+                JLabel lbl = new JLabel(textR);
+                lbl.setOpaque(true);
+               
+                jTextPane1.insertComponent(lbl);
+                Document doc = jTextPane1.getDocument();
+                try {
+                    doc.insertString(doc.getLength(), "\n\n", null);
+                } catch (BadLocationException ex) {
+                    Logger.getLogger(huvudFonster.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                jTextPane1.setCaretPosition(doc.getLength());
+            }
                  
-                 JLabel lbl2 = new JLabel("<html> hallå <br/><br/> </html>");
-                 
-                 jTextPane1.insertComponent(lbl2);
-                 
-                  JLabel lbl3 = new JLabel("<html> MAEEEE <br/><br/> </html>");
-                 
-                 jTextPane1.insertComponent(lbl3); */
+                
 
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //} //catch (SQLException ex) {
+//            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        //}
     }
     
    
@@ -211,7 +227,6 @@ public class huvudFonster extends javax.swing.JFrame {
         });
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane1.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -305,6 +320,7 @@ public class huvudFonster extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(198, 198, 198)))
                         .addGap(157, 157, 157))))
@@ -403,6 +419,9 @@ public class huvudFonster extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
+                huvudFonster nysida = new huvudFonster("lol", 1);
+                nysida.setVisible(true);
             }
         });
     }
