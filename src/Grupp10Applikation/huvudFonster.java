@@ -5,12 +5,10 @@
  */
 package Grupp10Applikation;
 
-<<<<<<< HEAD
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-=======
 import java.awt.GridLayout;
->>>>>>> NikolaNy
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,10 +24,8 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-<<<<<<< HEAD
 import java.util.Timer;
 import java.util.TimerTask;
-=======
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -37,18 +33,16 @@ import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
->>>>>>> NikolaNy
 /**
  *
  * @author oskar
  */
 public class huvudFonster extends javax.swing.JFrame {
-<<<<<<< HEAD
+
     GridBagLayout layout = new GridBagLayout();
     AktivitetsSkapaInlagg pAktivitet;
     //Panel2 p2;
-=======
->>>>>>> NikolaNy
+
 
     public final String anvandare;
     private AnvändarSida nysida;
@@ -64,8 +58,7 @@ public class huvudFonster extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         int tid = 1;
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -88,7 +81,7 @@ public class huvudFonster extends javax.swing.JFrame {
         //jPHuvudInlaggPanel.add(pForetag, c);
         pAktivitet.setVisible(false);
         
->>>>>>> Mathias
+
         if(admin == 1)
         {
         lblValkomst.setText("Välkommen! Du är inloggad som Admin");
@@ -97,7 +90,6 @@ public class huvudFonster extends javax.swing.JFrame {
                 lblValkomst.setText("Välkommen! Du är inloggad som användare.");
                 }
 
-=======
         if (admin == 1) {
             lblValkomst.setText("Välkommen! Du är inloggad som Admin");
         } else {
@@ -105,7 +97,7 @@ public class huvudFonster extends javax.swing.JFrame {
         }
 
         nyttInlagg();
->>>>>>> NikolaNy
+
     }
 
     public int arAdmin() {
@@ -113,7 +105,6 @@ public class huvudFonster extends javax.swing.JFrame {
         return admin;
     }
 
-<<<<<<< HEAD
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -602,7 +593,7 @@ public class huvudFonster extends javax.swing.JFrame {
 =======
 >>>>>>> NikolaNy
 
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }                                    
 
     /**
      * @param args the command line arguments
