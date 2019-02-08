@@ -16,6 +16,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -48,13 +50,25 @@ public class huvudFonster extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
+  
+        int tid = 1;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                jPanel1.removeAll();
+                nyttInlagg();
+            }
+        }, 0, 1000 * 60 * tid);
+
+        
+        
         if (admin == 1) {
             lblValkomst.setText("Välkommen! Du är inloggad som Admin");
         } else {
             lblValkomst.setText("Välkommen! Du är inloggad som användare.");
         }
 
-        nyttInlagg();
     }
 
     public int arAdmin() {
