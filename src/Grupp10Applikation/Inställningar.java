@@ -13,13 +13,15 @@ public class Inställningar extends javax.swing.JFrame {
     private final String anvandare;
     private Sql sql;
     private BildMetoder bildMetoder;
+    private int admin = 0;
     /**
      * Creates new form Inställningar
      */
-    public Inställningar(String anvandare) {
+    public Inställningar(String anvandare, int admin) {
         this.anvandare = anvandare;
         sql = new Sql();
         bildMetoder = new BildMetoder();
+        this.admin=admin;
         initComponents();
     }
 
@@ -56,6 +58,7 @@ public class Inställningar extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jBSparabild = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,6 +160,13 @@ public class Inställningar extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Tillbaka");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout btnAndraNamnLayout = new javax.swing.GroupLayout(btnAndraNamn);
         btnAndraNamn.setLayout(btnAndraNamnLayout);
         btnAndraNamnLayout.setHorizontalGroup(
@@ -214,32 +224,28 @@ public class Inställningar extends javax.swing.JFrame {
                                     .addComponent(btnAndraLosen)))))
                     .addGroup(btnAndraNamnLayout.createSequentialGroup()
                         .addGap(145, 145, 145)
-<<<<<<< HEAD
                         .addComponent(jLProfilbild, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jBValjbild)
-                            .addComponent(jBSparabild, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(68, Short.MAX_VALUE))
-=======
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(jButton2)))
+                            .addComponent(jBSparabild, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton2))
                 .addContainerGap(41, Short.MAX_VALUE))
->>>>>>> Oskar
         );
         btnAndraNamnLayout.setVerticalGroup(
             btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLProfilbild, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(btnAndraNamnLayout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(jBValjbild)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBSparabild)))
+                .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                            .addGap(63, 63, 63)
+                            .addComponent(jLProfilbild, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(btnAndraNamnLayout.createSequentialGroup()
+                            .addGap(164, 164, 164)
+                            .addComponent(jBValjbild)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBSparabild)))
+                    .addComponent(jButton2))
                 .addGap(77, 77, 77)
                 .addGroup(btnAndraNamnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAndraNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,6 +295,7 @@ public class Inställningar extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 public void textInstallningar()
     {
@@ -352,6 +359,27 @@ public void textInstallningar()
         bildMetoder.laddaUppBildDatabas(anvandare);
     }//GEN-LAST:event_jBSparabildActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   
+        
+     AnvändarSida nyasida = new AnvändarSida(anvandare, admin);  
+     
+     nyasida.textAnvandare();
+     
+     nyasida.setVisible(true);
+     this.setVisible(false);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -397,6 +425,7 @@ public void textInstallningar()
     private javax.swing.JButton jBSparabild;
     private javax.swing.JButton jBValjbild;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLProfilbild;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
