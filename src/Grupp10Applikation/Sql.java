@@ -282,6 +282,65 @@ public class Sql {
         return svar;
     }
 
+    public void laggTillAnvandare(String fornamn2, String efternamn2, String epost, String telefon, String titel, String losenord, String anvandarnamn){
+        int nyid= 0;
+        try {
+        String sqlfraga = "select max(anvandareid) from anvandare";
+        int maxid = 0;
+        
+          PreparedStatement pst1 = conn.prepareStatement(sqlfraga);
+            ResultSet rssvar = pst1.executeQuery(sqlfraga);
+
+            while (rssvar.next()) {
+            maxid = rssvar.getInt(1);
+            
+            }
+          nyid = maxid + 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        try{
+          
+        String sql = "Insert into anvandare (anvandareid, fornamn, efternamn, telnr, epost, losenord, anvandarnamn, admin, titel, profilbild, testcolumn) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, nyid);
+            pst.setString(2, fornamn2);
+            pst.setString(3, efternamn2);
+            pst.setString(4, telefon);
+            pst.setString(5, epost);
+            pst.setString(6, losenord);
+            pst.setString(7, anvandarnamn);
+            pst.setString(8, "false");
+            pst.setString(9, titel);
+            pst.setBytes(10, null);
+            pst.setString(11, null);
+            
+            pst.executeUpdate();
+        }
+        catch(SQLException ex){
+        System.out.print(ex);
+        }
+    
+    }
+    
+    public void AdminAndraLosen(String losen, String anvandarnamn) {
+
+        String nyalosen = losen;
+        String Anvandare = anvandarnamn;
+        
+        try {
+
+            String sql = "Update anvandare set losenord='" + nyalosen + "'" + "where Anvandarnamn='" + Anvandare + "'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Lösenordet är ändrat");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Sql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
  
     
     

@@ -45,14 +45,15 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnAdmin" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnVisaAktivitetsflode" alignment="1" max="32767" attributes="0"/>
-                  <Component id="btnForetagsFlode" max="32767" attributes="0"/>
-                  <Component id="btnVisaAllaFloden" max="32767" attributes="0"/>
-                  <Component id="btnBokaEttMöte" max="32767" attributes="0"/>
-                  <Component id="btnVisaProfil" max="32767" attributes="0"/>
+                  <Component id="btnForetagsFlode" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnVisaAllaFloden" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnBokaEttMöte" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnVisaProfil" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnForskningsFlode" alignment="0" pref="237" max="32767" attributes="0"/>
-                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -62,11 +63,9 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="350" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jSPValtDatum" min="-2" pref="501" max="-2" attributes="0"/>
@@ -95,7 +94,7 @@
                       <Component id="jCalendar1" min="-2" pref="431" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="300" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -130,6 +129,10 @@
                                       <Component id="btnForetagsFlode" min="-2" pref="59" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="btnVisaAllaFloden" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="btnBokaEttMöte" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -141,27 +144,16 @@
                                       <Component id="jCalendar1" min="-2" pref="338" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnBokaEttMöte" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="btnAdmin" min="-2" pref="65" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace pref="125" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="585" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <EmptySpace pref="125" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="585" max="-2" attributes="0"/>
                               <Component id="jSPValtDatum" min="-2" pref="216" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
@@ -284,16 +276,13 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextPane" name="jTextPane1">
-        </Component>
-      </SubComponents>
-    </Container>
+    <Component class="javax.swing.JButton" name="btnAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Admin Inst&#xe4;llningar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
