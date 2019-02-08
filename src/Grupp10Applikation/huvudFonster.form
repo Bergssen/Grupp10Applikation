@@ -45,6 +45,19 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
+<<<<<<< HEAD
+=======
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnAdmin" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnVisaAktivitetsflode" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnForetagsFlode" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnVisaAllaFloden" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnBokaEttMöte" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnVisaProfil" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnForskningsFlode" alignment="0" pref="237" max="32767" attributes="0"/>
+                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+              </Group>
+>>>>>>> origin/Robin
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -58,6 +71,7 @@
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -96,6 +110,43 @@
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+=======
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="350" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jSPValtDatum" min="-2" pref="501" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="lblInloggadSom" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="lblProfilbild" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                          <Component id="btnVisaMedelande" min="-2" pref="149" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnTaBortMedelande" min="-2" pref="149" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                      <Component id="jCalendar1" min="-2" pref="431" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
+>>>>>>> origin/Robin
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,6 +166,7 @@
                       <Component id="lblValkomst" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -135,6 +187,17 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+=======
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btnVisaProfil" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+>>>>>>> origin/Robin
                                       <Component id="btnVisaAktivitetsflode" min="-2" pref="59" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -145,7 +208,12 @@
                                       <Component id="btnForetagsFlode" min="-2" pref="59" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="btnVisaAllaFloden" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="btnBokaEttMöte" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
+<<<<<<< HEAD
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnBokaEttMöte" min="-2" pref="60" max="-2" attributes="0"/>
@@ -156,6 +224,28 @@
                           <Group type="102" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="1025" max="-2" attributes="0"/>
                               <EmptySpace pref="14" max="32767" attributes="0"/>
+=======
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="btnVisaMedelande" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="btnTaBortMedelande" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="jCalendar1" min="-2" pref="338" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="btnAdmin" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="125" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="585" max="-2" attributes="0"/>
+>>>>>>> origin/Robin
                               <Component id="jSPValtDatum" min="-2" pref="216" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
@@ -266,6 +356,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
+<<<<<<< HEAD
         <Component class="javax.swing.JTextPane" name="jTextPane1">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
@@ -279,6 +370,18 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+=======
+        <Component class="javax.swing.JTextPane" name="jTextPan1">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btnAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Admin Inst&#xe4;llningar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminActionPerformed"/>
+>>>>>>> origin/Robin
       </Events>
     </Component>
   </SubComponents>
