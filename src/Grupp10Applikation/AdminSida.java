@@ -106,14 +106,15 @@ public class AdminSida extends javax.swing.JFrame {
  
         pane = new JPanel();
         pane.setLayout(new GridLayout(0, 2, 2, 2));
+        
 
-        fornamn = new JTextField(5);
-        efternamn = new JTextField(5);
-        epostfalt =  new JTextField(5);
-        telnr = new JTextField(5);
-        losenord = new JTextField(5);
-        anvandarnamn = new JTextField(5);
-        titel = new JTextField(5);
+        fornamn = new JTextField(7);
+        efternamn = new JTextField(7);
+        epostfalt =  new JTextField(7);
+        telnr = new JTextField(7);
+        losenord = new JTextField(7);
+        anvandarnamn = new JTextField(7);
+        titel = new JTextField(7);
         
         
         pane.add(new JLabel("Förnamn"));
@@ -170,9 +171,9 @@ public class AdminSida extends javax.swing.JFrame {
          pane = new JPanel();
         pane.setLayout(new GridLayout(0, 2, 2, 2));
         
-        nyttlosen = new JTextField(5);
-        upprepalosen = new JTextField(5);
-        Anvandare = new JTextField(5);
+        nyttlosen = new JTextField(7);
+        upprepalosen = new JTextField(7);
+        Anvandare = new JTextField(7);
         
         
         pane.add(new JLabel("Ange det nya lösenordet"));
