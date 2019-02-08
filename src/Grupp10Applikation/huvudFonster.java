@@ -87,13 +87,15 @@ public class huvudFonster extends javax.swing.JFrame {
 
             Statement stmt = conn.createStatement();
 
-            ResultSet rs = stmt.executeQuery("select Text, Profilbild from inlagg join anvandare on AnvandareID = AnvandarID");
+            ResultSet rs = stmt.executeQuery("select Text, Profilbild, anvandarnamn from inlagg join anvandare on AnvandareID = AnvandarID");
 
             while (rs.next()) {
 
                 String text = rs.getString(1);
                 
                 imageBytes=rs.getBytes(2);
+                
+                String text2 = rs.getString(3);
                 
                 image=getToolkit().createImage(imageBytes);
                 
@@ -115,7 +117,7 @@ public class huvudFonster extends javax.swing.JFrame {
 
                 textR = sb.toString();
                 
-                PanelTest paneltest = new PanelTest(textR, bild);
+                PanelTest paneltest = new PanelTest(textR, bild, text2);
                 paneltest.setVisible(true);
                 jPanel1.add(paneltest);
                 
