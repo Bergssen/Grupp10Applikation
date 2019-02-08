@@ -18,11 +18,12 @@ public class PanelTest extends javax.swing.JPanel {
     /**
      * Creates new form PanelTest
      */
-    public PanelTest(String textMeddelande, ImageIcon bild) {
+    public PanelTest(String textMeddelande, ImageIcon bild, String anvandarNamn) {
         initComponents();
         
         jTextArea1.setText(textMeddelande);
         jLabel1.setIcon(bild);
+        jLabel2.setText(anvandarNamn);
         
         
         

@@ -19,6 +19,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -58,12 +60,17 @@ public class huvudFonster extends javax.swing.JFrame {
         anvandare = anvandarNamn;
         this.admin = admin;
         initComponents();
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> master
         int tid = 1;
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+<<<<<<< HEAD
                fyllStartflode();
             }
         },0,100 * 60 * tid);
@@ -90,14 +97,26 @@ public class huvudFonster extends javax.swing.JFrame {
                 lblValkomst.setText("Välkommen! Du är inloggad som användare.");
                 }
 
+=======
+                jPanel1.removeAll();
+                nyttInlagg();
+            }
+        }, 0, 1000 * 60 * tid);
+
+        
+        
+>>>>>>> master
         if (admin == 1) {
             lblValkomst.setText("Välkommen! Du är inloggad som Admin");
         } else {
             lblValkomst.setText("Välkommen! Du är inloggad som användare.");
         }
 
+<<<<<<< HEAD
         nyttInlagg();
 
+=======
+>>>>>>> master
     }
 
     public int arAdmin() {
@@ -123,13 +142,15 @@ public class huvudFonster extends javax.swing.JFrame {
 
             Statement stmt = conn.createStatement();
 
-            ResultSet rs = stmt.executeQuery("select Text, Profilbild from inlagg join anvandare on AnvandareID = AnvandarID");
+            ResultSet rs = stmt.executeQuery("select Text, Profilbild, anvandarnamn from inlagg join anvandare on AnvandareID = AnvandarID");
 
             while (rs.next()) {
 
                 String text = rs.getString(1);
                 
                 imageBytes=rs.getBytes(2);
+                
+                String text2 = rs.getString(3);
                 
                 image=getToolkit().createImage(imageBytes);
                 
@@ -151,7 +172,7 @@ public class huvudFonster extends javax.swing.JFrame {
 
                 textR = sb.toString();
                 
-                PanelTest paneltest = new PanelTest(textR, bild);
+                PanelTest paneltest = new PanelTest(textR, bild, text2);
                 paneltest.setVisible(true);
                 jPanel1.add(paneltest);
                 
