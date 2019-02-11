@@ -179,7 +179,7 @@ public class AdminSida extends javax.swing.JFrame {
         pane.add(new JLabel("Ange det nya lösenordet"));
         pane.add(nyttlosen);
 
-        pane.add(new JLabel("upprepa det nya lösenordet"));
+        pane.add(new JLabel("Upprepa det nya lösenordet"));
         pane.add(upprepalosen);
         
        pane.add(new JLabel("Ange användare där lösenordet ska ändras"));
